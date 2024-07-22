@@ -11,8 +11,10 @@ spec:
       services:
         - name: mongo-express-service
           port: 8081
+      {{- if .Values.middleware.mongoExpressStripprefix.enabled | nindent=6 }}
       middlewares:
         - name: mongo-express-stripprefix
+      {{- end }}
 ---
 {{- if .Values.middleware.mongoExpressStripprefix.enabled }}
 apiVersion: traefik.io/v1alpha1
