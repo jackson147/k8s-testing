@@ -1,4 +1,4 @@
-apiVersion: argoproj.io/v1alpha
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: traefik-argo
@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/jackson147/k8s-testing.git
     targetRevision: HEAD
-    path: traefik-umbrella-helm
+    path: helm/traefik-umbrella-helm
   destination:
     server: https://kubernetes.default.svc
     namespace: testing
