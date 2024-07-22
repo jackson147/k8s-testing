@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha
+kind: Application
+metadata:
+  name: traefik-argo
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/jackson147/k8s-testing.git
+    targetRevision: HEAD
+    path: helm/traefik-umbrella-helm
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: testing
+
+  syncPolicy:
+    # pruneResourcesOnDeletion: false
+    syncOptions:
+    - CreateNameSpace=true
+
+    automated:
+      selfHeal: true
+      prune: true
