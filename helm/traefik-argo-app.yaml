@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/jackson147/k8s-testing.git
     targetRevision: HEAD
-    path: helm/traefik-umbrella-helm
+    path: traefik-umbrella-helm
   destination:
     server: https://kubernetes.default.svc
     namespace: testing
