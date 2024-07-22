@@ -1,0 +1,4 @@
+apiVersion: v2
+name: mongo-express
+version: 0.0.1
+description: Mongo with mongo express through traefik proxy

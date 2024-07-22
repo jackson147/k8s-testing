@@ -1,0 +1,27 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: mongo
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: PathPrefix("/mongo")
+      kind: Rule
+      services:
+        - name: mongo-express-service
+          port: 8081
+      middlewares:
+        - name: mongo-express-stripprefix
+---
+{{- if .Values.middleware.mongoExpressStripprefix.enabled }}
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: mongo-express-stripprefix
+spec:
+  stripPrefix:
+    prefixes:
+      - "/mongo"
+    forceSlash: false
+{{- end }}

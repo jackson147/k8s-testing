@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx-test  # Matches pods with label "app: nginx"
+  ports:
+  - protocol: TCP
+    port: 4200  # External port for incoming traffic
+    targetPort: 80  # Target port on the Nginx container
+  type:  NodePort  # Request cloud provider for a load balancer
