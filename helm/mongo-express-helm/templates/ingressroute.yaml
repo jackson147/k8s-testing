@@ -23,5 +23,5 @@ spec:
   stripPrefix:
     prefixes:
       - "/mongo"
-    forceSlash: false
+    forceSlash: true
 {{- end }}
