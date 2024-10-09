@@ -28,3 +28,15 @@ ingress:
           name: traefik
           port:
             number: 8080
+
+dashboard:
+  enabled: true
+  domain: dashboard.newlinkedlist.site
+rbac:
+  enabled: true
+
+kubernetes:
+  namespaces:
+   - default
+   - main
+   - kube-system
