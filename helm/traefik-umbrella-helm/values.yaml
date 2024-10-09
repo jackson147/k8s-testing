@@ -1,8 +1,9 @@
 ingressClassName: traefik
 service:
-  type: NodePort
+  type: LoadBalancer
   annotations:
     metallb.universe.tf/allocate: "yes"
+    metallb.universe.tf/address-pool: default
   port: 80
   targetPort: 80
 tls:
