@@ -16,15 +16,11 @@ tls:
         ingressClass: traefik
         domains:
           - newlinkedlist.site
-traefik:
-  ingressRoute:
-    dashboard:
-      enabled: true
 ingress:
   enabled: true
   annotations:
     kubernetes.io/ingress.class: traefik
-  host: newlinkedlist.site
+  host: dashboard.newlinkedlist.site
   paths:
     - path: /
       backend:
