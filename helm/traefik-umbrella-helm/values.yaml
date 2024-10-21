@@ -1,43 +1,53 @@
-ingressClassName: traefik
-service:
-  type: LoadBalancer
-  annotations:
-    metallb.universe.tf/allocate: "yes"
-    metallb.universe.tf/address-pool: default
-  port: 80
-  targetPort: 80
-tls:
-  certManager:
-    enable: true
-    email: developer.jacksondroid@gmail.com
-    clusterIssuer: letsencrypt-prod
-    acme:
-      http01:
-        ingressClass: traefik
-        domains:
-          - newlinkedlist.site
-ingress:
-  enabled: true
-  domain: dashboard.newlinkedlist.site
-  annotations:
-    kubernetes.io/ingress.class: traefik
-  host: dashboard.newlinkedlist.site
-  paths:
-    - path: /
-      backend:
-        service:
-          name: traefik
-          port:
-            number: 8080
+globalArguments:
+  - "--global.sendanonymoususage=false"
+  - "--global.checknewversion=false"
 
-dashboard:
+additionalArguments:
+  - "--serversTransport.insecureSkipVerify=true"
+  - "--log.level=DEBUG"
+
+deployment:
   enabled: true
-  domain: dashboard.newlinkedlist.site
+  replicas: 3
+  annotations: {}
+  podAnnotations: {}
+  additionalContainers: []
+  initContainers: []
+
+ports:
+  web:
+    redirectTo:
+      port: websecure
+      priority: 10
+  websecure:
+    http3:
+      enabled: true
+    advertisedPort: 443
+    tls:
+      enabled: true
+      
+ingressRoute:
+  dashboard:
+    enabled: false
+
+providers:
+  kubernetesCRD:
+    enabled: true
+    ingressClass: traefik-external
+    allowExternalNameServices: true
+  kubernetesIngress:
+    enabled: true
+    allowExternalNameServices: true
+    publishedService:
+      enabled: false
+
 rbac:
   enabled: true
 
-kubernetes:
-  namespaces:
-   - default
-   - main
-   - kube-system
+service:
+  enabled: true
+  type: LoadBalancer
+  annotations: {}
+  labels: {}
+  loadBalancerSourceRanges: []
+  externalIPs: []
