@@ -12,11 +12,11 @@ spec:
             name: letsencrypt-staging
         solvers:
             - dns01:
-                cloudflare:
-                    email: jaswahhihi+cloudflare@gmail.com
-                    apiTokenSecretRef:
-                        name: cloudflare-token-secret
-                        key: cloudflare-token
-                selector:
-                    dnsZones:
-                        - "newlinkedlist.uk"
+                    cloudflare:
+                        email: jaswahhihi+cloudflare@gmail.com
+                        apiTokenSecretRef:
+                            name: cloudflare-token-secret
+                            key: cloudflare-token
+              selector:
+                dnsZones:
+                    - "newlinkedlist.uk"
