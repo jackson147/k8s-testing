@@ -2,7 +2,7 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-    name: traefik-newlinkedlist-uk-production
+    name: traefik-newlinkedlist-uk
     namespace: traefik
 spec:
     secretName: traefik-newlinkedlist-uk-production-tls
