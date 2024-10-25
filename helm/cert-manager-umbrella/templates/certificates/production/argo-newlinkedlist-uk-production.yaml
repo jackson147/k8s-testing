@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+    name: argo-newlinkedlist-uk-production
+    namespace: argocd
+spec:
+    secretName: argocd-newlinkedlist-uk-production-tls
+    issuerRef:
+        name: letsencrypt-production
+        kind: ClusterIssuer
+    commonName: "*.argocd.newlinkedlist.uk"
+    dnsNames:
+    - "argocd.newlinkedlist.uk"
+    - "*.argocd.newlinkedlist.uk"
