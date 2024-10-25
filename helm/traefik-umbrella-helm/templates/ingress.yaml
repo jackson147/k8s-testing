@@ -9,7 +9,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`dashboard.newlinkedlist.uk`)
+    - match: Host(`traefik.newlinkedlist.uk`)
       kind: Rule
       middlewares:
         - name: traefik-dashboard-basicauth
