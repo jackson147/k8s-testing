@@ -17,6 +17,6 @@ spec:
                     apiTokenSecretRef:
                         name: cloudflare-token-secret
                         key: cloudflare-token
-            selector:
-                dnsZones:
-                    - "newlinkedlist.uk"
+                selector:
+                    dnsZones:
+                        - "newlinkedlist.uk"
