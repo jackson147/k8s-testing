@@ -15,4 +15,4 @@ spec:
         - name: argocd-server
           port: 443
   tls:
-    secretName: argocd-newlinkedlist-uk-staging-tls
+    secretName: argocd-newlinkedlist-uk-production-tls
