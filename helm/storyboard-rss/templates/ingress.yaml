@@ -15,4 +15,4 @@ spec:
         - name: storyboard
           port: {{ .Values.port }}
   tls:
-    secretName: thestoryboardrss-newlinkedlist-uk-staging-tls
+    secretName: thestoryboardrss-newlinkedlist-uk-production-tls
