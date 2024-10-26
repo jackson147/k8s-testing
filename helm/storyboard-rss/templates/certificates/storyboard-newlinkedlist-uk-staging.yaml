@@ -3,7 +3,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
     name: thestoryboardrss-newlinkedlist-uk-staging
-    namespace: storyboard
+    namespace: webapps
 spec:
     secretName: thestoryboardrss-newlinkedlist-uk-staging-tls
     issuerRef:
