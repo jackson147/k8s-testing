@@ -1,0 +1,4 @@
+apiVersion: v2
+name: storyboard
+version: 0.0.1
+description: Storyboard RSS feed

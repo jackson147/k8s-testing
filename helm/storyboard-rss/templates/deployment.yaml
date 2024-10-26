@@ -1,0 +1,28 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: storyboard
+  namespace: webapps
+  labels:
+    app: storyboard
+spec:
+  replicas: 1
+  progressDeadlineSeconds: 600
+  revisionHistoryLimit: 2
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: storyboard
+  template:
+    metadata:
+      labels:
+        app: storyboard
+    spec:
+      containers:
+      - name: storyboard
+        image: jackson147/storyboard-rss:latest
+        env:
+        - name: PORT
+          value: {{ quote .Values.port }}
