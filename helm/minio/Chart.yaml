@@ -1,0 +1,9 @@
+apiVersion: v2
+name: minio-umbrella
+version: 0.0.1
+description: A minio umbrella chart
+dependencies:
+- name: minio
+  version: ">= 14.8.0"
+  repository: https://charts.bitnami.com/bitnami
+
