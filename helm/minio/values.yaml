@@ -1,8 +1,0 @@
-# minio:
-#   auth:
-#     existingSecret: minio-secret
-#   extraEnvVars:
-#   - name: MINIO_LOG_LEVEL
-#     value: DEBUG
-  # - name: MINIO_SERVER_URL
-  #   value: 'http://localhost:9000'
