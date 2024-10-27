@@ -15,4 +15,4 @@ spec:
         - name: wedding-site
           port: 80
   tls:
-    secretName: wedding-site-newlinkedlist-uk-staging-tls
+    secretName: wedding-site-newlinkedlist-uk-production-tls
