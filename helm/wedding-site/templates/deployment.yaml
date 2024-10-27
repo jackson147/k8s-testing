@@ -1,0 +1,25 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: wedding-site
+  namespace: webapps
+  labels:
+    app: wedding-site
+spec:
+  replicas: 1
+  progressDeadlineSeconds: 600
+  revisionHistoryLimit: 2
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: wedding-site
+  template:
+    metadata:
+      labels:
+        app: wedding-site
+    spec:
+      containers:
+      - name: wedding-site
+        image: jackson147/wedding-site-minio:latest

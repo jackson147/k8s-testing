@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+    name: wedding-site-newlinkedlist-uk-staging
+    namespace: webapps
+spec:
+    secretName: wedding-site-newlinkedlist-uk-staging-tls
+    issuerRef:
+        name: letsencrypt-staging
+        kind: ClusterIssuer
+    commonName: "*.wedding-site.newlinkedlist.uk"
+    dnsNames:
+    - "wedding-site.newlinkedlist.uk"
+    - "*.wedding-site.newlinkedlist.uk"

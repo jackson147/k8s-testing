@@ -1,0 +1,4 @@
+apiVersion: v2
+name: wedding-site
+version: 0.0.1
+description: wedding-site nginx that just forwards to internal minio
