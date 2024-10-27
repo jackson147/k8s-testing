@@ -15,4 +15,4 @@ spec:
         - name: minio
           port: 9001
   tls:
-    secretName: minio-newlinkedlist-uk-staging-tls
+    secretName: minio-newlinkedlist-uk-production-tls
