@@ -13,6 +13,6 @@ spec:
       kind: Rule
       services:
         - name: minio
-          port: 9090
+          port: 9091
   tls:
     secretName: minio-newlinkedlist-uk-staging-tls
