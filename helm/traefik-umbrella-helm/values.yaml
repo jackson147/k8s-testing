@@ -30,11 +30,14 @@ traefik:
       port: 8080
       exposedPort: 8080
       protocol: TCP
-    # unifi-stun:
-    #   port: 3478
-    #   expose: true
-    #   exposedPort: 3478
-    #   protocol: UDP
+    unifi-stun:
+      port: 3478
+      exposedPort: 3478
+      protocol: UDP
+    unifi-discovery:
+      port: 10001
+      exposedPort: 10001
+      protocol: UDP
         
   ingressRoute:
     dashboard:
