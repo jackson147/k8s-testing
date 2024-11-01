@@ -26,20 +26,15 @@ traefik:
       advertisedPort: 443
       tls:
         enabled: true
-    unifi-8080-tcp: 
+    unifi-inform:
       port: 8080
       expose: true
       exposedPort: 8080
       protocol: TCP
-    unifi-3478-udp: 
+    unifi-stun:
       port: 3478
-      expose: true  
+      expose: true
       exposedPort: 3478
-      protocol: UDP
-    unifi-10001-udp: 
-      port: 10001
-      expose: true  
-      exposedPort: 10001
       protocol: UDP
         
   ingressRoute:
