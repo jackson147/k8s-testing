@@ -17,4 +17,4 @@ spec:
           serversTransport: no-verify-tls
           scheme: https
   tls:
-    secretName: unifi-newlinkedlist-uk-staging-tls
+    secretName: unifi-newlinkedlist-uk-production-tls
