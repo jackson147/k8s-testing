@@ -12,7 +12,7 @@ spec:
     - match: Host(`unifi.newlinkedlist.uk`)
       kind: Rule
       services:
-        - name: unifi
+        - name: unifi-controller-tcp
           port: 8443
           serversTransport: no-verify-tls
   tls:
