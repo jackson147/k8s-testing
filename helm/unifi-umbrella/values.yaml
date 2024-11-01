@@ -3,9 +3,17 @@ unifi-controller:
     enabled: true
     accessMode: ReadWriteOnce 
     size: 8Gi 
+    ## database data Persistent Volume Storage Class
+    ## If defined, storageClassName: <storageClass>
+    ## If set to "-", storageClassName: "", which disables dynamic provisioning
+    storageClassName: local-path
     annotations: {}
     backup:
       enabled: true
       accessMode: ReadWriteOnce 
       size: 8Gi 
+      ## database data Persistent Volume Storage Class
+      ## If defined, storageClassName: <storageClass>
+      ## If set to "-", storageClassName: "", which disables dynamic provisioning
+      storageClassName: local-path
       annotations: {}
