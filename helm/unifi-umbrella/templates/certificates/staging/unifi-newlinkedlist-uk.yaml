@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+    name: unifi-newlinkedlist-uk-staging
+    namespace: unifi
+spec:
+    secretName: unifi-newlinkedlist-uk-staging-tls
+    issuerRef:
+        name: letsencrypt-staging
+        kind: ClusterIssuer
+    commonName: "*.unifi.newlinkedlist.uk"
+    dnsNames:
+    - "unifi.newlinkedlist.uk"
+    - "*.unifi.newlinkedlist.uk"
