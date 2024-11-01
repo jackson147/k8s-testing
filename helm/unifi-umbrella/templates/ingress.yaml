@@ -15,5 +15,6 @@ spec:
         - name: unifi-controller-tcp
           port: 8443
           serversTransport: no-verify-tls
+          scheme: https
   tls:
     secretName: unifi-newlinkedlist-uk-staging-tls
