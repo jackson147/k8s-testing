@@ -6,7 +6,7 @@ unifi-controller:
     ## database data Persistent Volume Storage Class
     ## If defined, storageClassName: <storageClass>
     ## If set to "-", storageClassName: "", which disables dynamic provisioning
-    storageClass: ""
+    storageClass: "-"
     annotations: {}
     backup:
       enabled: true
@@ -15,5 +15,5 @@ unifi-controller:
       ## database data Persistent Volume Storage Class
       ## If defined, storageClassName: <storageClass>
       ## If set to "-", storageClassName: "", which disables dynamic provisioning
-      storageClass: ""
+      storageClass: "-"
       annotations: {}
