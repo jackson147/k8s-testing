@@ -1,4 +1,6 @@
 unifi-controller:
+  ingress:
+    enabled: false
   persistence:
     enabled: true
     accessMode: ReadWriteOnce 
