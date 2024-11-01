@@ -13,3 +13,5 @@ spec:
     services:
     - name: unifi-controller-tcp
       port: 8080
+  tls:
+    secretName: unifi-newlinkedlist-uk-production-tls
