@@ -3,7 +3,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
     name: minio-newlinkedlist-uk-production
-    namespace: webapps
+    namespace: minio
 spec:
     secretName: minio-newlinkedlist-uk-production-tls
     issuerRef:
