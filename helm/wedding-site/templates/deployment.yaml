@@ -22,4 +22,4 @@ spec:
     spec:
       containers:
       - name: wedding-site
-        image: jackson147/wedding-site-minio:latest
+        image: jackson147/wedding-site-minio:1.1
