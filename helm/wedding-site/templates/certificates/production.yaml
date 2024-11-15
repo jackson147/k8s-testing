@@ -2,14 +2,14 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-    name: wedding-site-newlinkedlist-uk-production
+    name: wedding-site-newlinkedlist-com-production
     namespace: webapps
 spec:
-    secretName: wedding-site-newlinkedlist-uk-production-tls
+    secretName: wedding-site-newlinkedlist-com-production-tls
     issuerRef:
         name: letsencrypt-production
         kind: ClusterIssuer
-    commonName: "*.wedding-site.newlinkedlist.uk"
+    commonName: "*.wedding-site.newlinkedlist.com"
     dnsNames:
-    - "wedding-site.newlinkedlist.uk"
-    - "*.wedding-site.newlinkedlist.uk"
+    - "wedding-site.newlinkedlist.com"
+    - "*.wedding-site.newlinkedlist.com"

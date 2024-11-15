@@ -9,10 +9,10 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`wedding-site.newlinkedlist.uk`)
+    - match: Host(`wedding-site.newlinkedlist.com`)
       kind: Rule
       services:
         - name: wedding-site
           port: 80
   tls:
-    secretName: wedding-site-newlinkedlist-uk-production-tls
+    secretName: wedding-site-newlinkedlist-com-production-tls
