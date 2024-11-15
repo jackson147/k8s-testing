@@ -16,22 +16,3 @@ spec:
           port: 9001
   tls:
     secretName: minio-newlinkedlist-com-production-tls
----
-apiVersion: traefik.io/v1alpha1
-kind: IngressRoute
-metadata:
-  name: minio-console-uk
-  namespace: minio
-  annotations: 
-    kubernetes.io/ingress.class: traefik-external
-spec:
-  entryPoints:
-    - websecure
-  routes:
-    - match: Host(`console.minio.newlinkedlist.uk`)
-      kind: Rule
-      services:
-        - name: minio
-          port: 9001
-  tls:
-    secretName: minio-newlinkedlist-uk-production-tls
