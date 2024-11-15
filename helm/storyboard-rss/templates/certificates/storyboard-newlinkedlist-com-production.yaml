@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+    name: thestoryboardrss-newlinkedlist-com-production
+    namespace: webapps
+spec:
+    secretName: thestoryboardrss-newlinkedlist-com-production-tls
+    issuerRef:
+        name: letsencrypt-production
+        kind: ClusterIssuer
+    commonName: "*.thestoryboardrss.newlinkedlist.com"
+    dnsNames:
+    - "thestoryboardrss.newlinkedlist.com"
+    - "*.thestoryboardrss.newlinkedlist.com"
