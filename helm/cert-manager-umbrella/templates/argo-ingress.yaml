@@ -9,10 +9,10 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`argocd.newlinkedlist.uk`)
+    - match: Host(`argocd.newlinkedlist.com`)
       kind: Rule
       services:
         - name: argocd-server
           port: 443
   tls:
-    secretName: argocd-newlinkedlist-uk-production-tls
+    secretName: argocd-newlinkedlist-com-production-tls
