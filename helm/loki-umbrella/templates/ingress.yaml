@@ -15,4 +15,4 @@ spec:
         - name: loki-grafana
           port: 80
   tls:
-    secretName: unifi-newlinkedlist-com-staging-tls
+    secretName: grafana-newlinkedlist-com-staging-tls
