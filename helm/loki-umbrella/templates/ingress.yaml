@@ -15,4 +15,4 @@ spec:
         - name: observeability-grafana
           port: 80
   tls:
-    secretName: grafana-newlinkedlist-com-staging-tls
+    secretName: grafana-newlinkedlist-com-production-tls
