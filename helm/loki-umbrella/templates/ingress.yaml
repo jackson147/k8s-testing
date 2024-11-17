@@ -12,7 +12,7 @@ spec:
     - match: Host(`grafana.newlinkedlist.com`)
       kind: Rule
       services:
-        - name: grafana
+        - name: observeability-grafana
           port: 80
   tls:
     secretName: grafana-newlinkedlist-com-staging-tls
