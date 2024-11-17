@@ -1,0 +1,16 @@
+loki-stack:
+  grafana:
+    enabled: true
+  prometheus:
+    enabled: true
+    alertmanager:
+      persistentVolume: 
+        enabled: false
+      server:
+        persistentVolume:
+          enabled: false
+  loki:
+    persistence:
+      enabled: true
+      storageClassName: nfs-client
+      size: 5Gi
