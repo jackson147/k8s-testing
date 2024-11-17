@@ -1,16 +1,11 @@
 loki-stack:
+  loki:
+    enabled: true
+    size: 1Gi
+  promtail:
+    enabled: true
   grafana:
     enabled: true
-  prometheus:
-    enabled: true
-    alertmanager:
-      persistentVolume: 
-        enabled: false
-    server:
-      persistentVolume:
-        enabled: false
-  loki:
-    persistence:
-      enabled: true
-      storageClassName: local-path
-      size: 8Gi
+    sidecar:
+      datasources:
+        enabled: true
