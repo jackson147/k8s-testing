@@ -12,5 +12,5 @@ loki-stack:
   loki:
     persistence:
       enabled: true
-      storageClassName: nfs-client
-      size: 5Gi
+      storageClassName: local-path
+      size: 8Gi
