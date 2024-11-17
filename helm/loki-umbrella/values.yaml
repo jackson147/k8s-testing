@@ -4,8 +4,9 @@ loki-stack:
     size: 1Gi
   promtail:
     enabled: true
-    clients:
-      - url: http://observeability-loki:3100/loki/api/v1/push
+    config:
+      clients:
+        - url: http://observeability-loki:3100/loki/api/v1/push
   grafana:
     enabled: true
     sidecar:
