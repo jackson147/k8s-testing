@@ -7,9 +7,9 @@ loki-stack:
       tag: 2.9.3
   promtail:
     enabled: true
-    # config:
-    #   clients:
-    #     - url: http://observeability-loki:3100/loki/api/v1/push
+    config:
+      clients:
+        - url: http://observeability-loki:3100/loki/api/v1/push
   grafana:
     enabled: true
     # additionalDataSources:
