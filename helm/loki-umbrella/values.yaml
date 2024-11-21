@@ -1,7 +1,7 @@
 loki-stack:
   loki:
     enabled: true
-    size: 1Gi
+    size: 20Gi
     auth_enabled: false
     image:
       tag: 2.9.3
