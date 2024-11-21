@@ -14,6 +14,14 @@ loki-stack:
     config:
       clients:
         - url: http://observeability-loki:3100/loki/api/v1/push
+  prometheus:
+    enabled: true
+    alertmanager:
+      persistentVolume:
+          enabled: false
+    server:
+      persistentVolume:
+        enabled=false
   grafana:
     enabled: true
     sidecar:
