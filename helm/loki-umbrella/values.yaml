@@ -1,10 +1,14 @@
 loki-stack:
   loki:
     enabled: true
-    size: 20Gi
+    size: 10Gi
     auth_enabled: false
     image:
       tag: 2.9.3
+    persistence:
+      enabled: true
+      storageClassName: local-path
+      size: 5Gi
   promtail:
     enabled: true
     config:
@@ -12,16 +16,6 @@ loki-stack:
         - url: http://observeability-loki:3100/loki/api/v1/push
   grafana:
     enabled: true
-    # additionalDataSources:
-    # - name: Loki
-    #   type: loki
-    #   access: proxy
-    #   url: http://observeability-loki.observe.svc.cluster.local:3100
-    #   jsonData:
-    #     tlsSkipVerify: true
-    #     httpHeaderName1: 'X-Scope-OrgID'
-    #   secureJsonData:
-    #     httpHeaderValue1: 'empty'
     sidecar:
       datasources:
         enabled: true
