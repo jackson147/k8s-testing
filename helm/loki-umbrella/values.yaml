@@ -21,7 +21,7 @@ loki-stack:
           enabled: false
     server:
       persistentVolume:
-        enabled=false
+        enabled: false
   grafana:
     enabled: true
     sidecar:
