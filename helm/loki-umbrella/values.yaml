@@ -54,7 +54,7 @@ loki:
 
 promtail:
   clients:
-    - url: http://loki-gateway/loki/api/v1/push
+    - url: http://observeability-loki-gateway/loki/api/v1/push
 
   scrape_configs:
     - job_name: system
