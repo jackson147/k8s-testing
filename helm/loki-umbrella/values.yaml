@@ -1,12 +1,14 @@
 loki:
   loki:
+    image:
+      tag: 2.9.3
     chunksCache:
       enabled: false
     memcached:
       chunk_cache:
         enabled: false
-      results_cache:
-        enabled: false
+    results_cache:
+      enabled: false
     resultsCache:
       enabled: false
     auth_enabled: false
