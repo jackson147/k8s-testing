@@ -1,5 +1,9 @@
 loki:
   loki:
+    chunksCache:
+      enabled: false
+    resultsCache:
+      enabled: false
     auth_enabled: false
     schemaConfig:
       configs:
@@ -19,8 +23,6 @@ loki:
       max_concurrent: 4
     commonConfig:
       replication_factor: 1
-      chunksCache:
-        enabled: false
 
   deploymentMode: SingleBinary 
   backend:
