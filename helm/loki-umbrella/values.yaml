@@ -20,7 +20,7 @@ loki:
     commonConfig:
       replication_factor: 1
     chunksCache:
-      allocatedMemory: 1024
+      enabled: false
 
   deploymentMode: SingleBinary 
   backend:
