@@ -19,6 +19,8 @@ loki:
       max_concurrent: 4
     commonConfig:
       replication_factor: 1
+    chunksCache:
+      allocatedMemory: 1024
 
   deploymentMode: SingleBinary 
   backend:
