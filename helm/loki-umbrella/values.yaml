@@ -2,6 +2,9 @@ loki:
   loki:
     chunksCache:
       enabled: false
+    memcached:
+      chunk_cache:
+        enabled: false
     resultsCache:
       enabled: false
     auth_enabled: false
