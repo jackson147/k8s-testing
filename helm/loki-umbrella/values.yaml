@@ -1,17 +1,17 @@
 loki:
   loki:
-    image:
-      tag: 2.9.3
-    chunksCache:
-      enabled: false
-    memcached:
-      chunk_cache:
-        enabled: false
-    results_cache:
-      enabled: false
-    resultsCache:
-      enabled: false
-    auth_enabled: false
+    # image:
+    #   tag: 2.9.3
+    # # chunksCache:
+    #   enabled: false
+    # memcached:
+    #   chunk_cache:
+    #     enabled: false
+    # results_cache:
+    #   enabled: false
+    # resultsCache:
+    #   enabled: false
+    # auth_enabled: false
     schemaConfig:
       configs:
         - from: 2024-04-01
@@ -31,13 +31,13 @@ loki:
     commonConfig:
       replication_factor: 1
 
-  deploymentMode: SingleBinary 
+  deploymentMode: SimpleScalable 
   backend:
-    replicas: 1
+    replicas: 3
   read:
-    replicas: 1
+    replicas: 3
   write:
-    replicas: 1
+    replicas: 3
   # Enable minio for storage
   minio:
     enabled: true
