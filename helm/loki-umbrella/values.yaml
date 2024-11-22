@@ -9,15 +9,11 @@ loki-stack:
       enabled: true
       storageClassName: local-path
       size: 5Gi
-    query_scheduler:
-      max_outstanding_requests_per_tenant: 4096
-    frontend:
-      max_outstanding_per_tenant: 4096
-    query_range:
-      parallelise_shardable_queries: true
-    limits_config:
-      split_queries_by_interval: 15m
-      max_query_parallelism: 32
+    server:
+      config:
+        limits_config:
+          max_concurrent_queries: 100
+          max_queries_per_second: 50
   promtail:
     enabled: true
     config:
