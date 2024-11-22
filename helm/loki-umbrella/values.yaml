@@ -5,6 +5,8 @@ loki:
     memcached:
       chunk_cache:
         enabled: false
+      results_cache:
+        enabled: false
     resultsCache:
       enabled: false
     auth_enabled: false
