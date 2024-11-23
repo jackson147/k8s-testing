@@ -5,4 +5,4 @@ kube-prometheus-stack:
     scrape_configs:
       - job_name: 'traefik'
         static_configs:
-          - targets: ['traefik-argo.traefik:9090']
+          - targets: ['traefik-argo.traefik:9100']
