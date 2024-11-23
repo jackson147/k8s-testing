@@ -19,3 +19,4 @@ spec:
           kind: TraefikService
   tls:
     secretName: traefik-newlinkedlist-com-production-tls
+  externalTrafficPolicy: Local
