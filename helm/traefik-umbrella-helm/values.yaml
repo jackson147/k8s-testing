@@ -64,3 +64,11 @@ traefik:
     labels: {}
     loadBalancerSourceRanges: []
     externalIPs: []
+
+  accessLog:
+    filePath: "/log/access.log"
+    format: json
+    fields:
+      defaultMode: keep
+      names:
+        StartUTC: drop
