@@ -6,6 +6,9 @@ traefik:
   additionalArguments:
     - "--serversTransport.insecureSkipVerify=true"
     - "--log.level=INFO"
+    - "--log.format=json"
+    - "--accesslog.format=json"
+    - "--accesslog=true"
 
   deployment:
     enabled: true
@@ -64,11 +67,3 @@ traefik:
     labels: {}
     loadBalancerSourceRanges: []
     externalIPs: []
-
-  accessLog:
-    filePath: "/log/access.log"
-    format: json
-    fields:
-      defaultMode: keep
-      names:
-        StartUTC: drop
