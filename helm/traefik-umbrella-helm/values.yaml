@@ -9,7 +9,6 @@ traefik:
     - "--log.format=json"
     - "--accesslog.format=json"
     - "--accesslog=true"
-    - "--accesslog.filePath=/var/log/traefik/access.log"
 
   deployment:
     enabled: true
