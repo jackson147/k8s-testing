@@ -42,6 +42,9 @@ traefik:
       port: 10001
       exposedPort: 10001
       protocol: UDP
+    metrics:
+      port: 9100
+      exposedPort: 9100
         
   ingressRoute:
     dashboard:
