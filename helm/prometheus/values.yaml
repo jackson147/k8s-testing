@@ -1,5 +1,8 @@
 kube-prometheus-stack:
   prometheus:
+    scrapeConfigSelector:
+      matchLabels:
+        prometheus: system-monitoring-prometheus
     prometheusSpec:
       resources:
         requests:
@@ -20,6 +23,9 @@ kube-prometheus-stack:
           memory: 512Mi
 
   prometheusOperator:
+    scrapeConfigSelector:
+      matchLabels:
+        prometheus: system-monitoring-prometheus
     prometheusOperatorSpec:
       resources:
         requests:
