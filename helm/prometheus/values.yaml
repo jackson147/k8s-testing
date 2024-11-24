@@ -1,4 +1,6 @@
 kube-prometheus-stack:
+
+prometheus:
   prometheus:
     prometheusSpec:
       resources:
@@ -6,6 +8,10 @@ kube-prometheus-stack:
           memory: 512Mi
         limits:
           memory: 1Gi
+    scrape_configs:
+      - job_name: 'traefik'
+        static_configs:
+          - targets: ['traefik-argo-metrics.traefik:9100']
 
   alertmanager:
     alertmanagerSpec:
