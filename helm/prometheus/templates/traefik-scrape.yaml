@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: ScrapeConfig
+metadata:
+  name: traefik-scrape-config
+  namespace: prometheus
+  labels:
+    prometheus: system-monitoring-prometheus
+spec:
+  staticConfigs:
+    - labels:
+        job: traefik
+      targets:
+        - traefik-argo-metrics.traefik:9100
