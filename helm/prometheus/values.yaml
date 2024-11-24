@@ -1,6 +1,4 @@
 kube-prometheus-stack:
-
-prometheus:
   prometheus:
     prometheusSpec:
       resources:
