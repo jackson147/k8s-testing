@@ -4,6 +4,7 @@ traefik:
     - "--global.checknewversion=false"
 
   additionalArguments:
+    - "--providers.kubernetescrd.allowCrossNamespace=true"
     - "--serversTransport.insecureSkipVerify=true"
     - "--log.level=INFO"
     - "--log.format=json"
