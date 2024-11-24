@@ -45,6 +45,12 @@ traefik:
     metrics:
       port: 9100
       exposedPort: 9100
+      protocol: TCP
+
+  metrics:
+    prometheus:
+      service:
+        enabled: true
         
   ingressRoute:
     dashboard:
