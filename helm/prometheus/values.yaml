@@ -1,21 +1,27 @@
 kube-prometheus-stack:
-  grafana:
-    enabled: false
   prometheus:
-    scrape_configs:
-      - job_name: 'traefik'
-        static_configs:
-          - targets: ['traefik-argo.traefik:9100']
-  prometheusSpec:
-    resources:
-      requests:
-        memory: 1Gi
-      limits:
-        memory: 2Gi
-  alertmanager:
-    alertmanagerSpec:
+    prometheusSpec:
       resources:
         requests:
           memory: 512Mi
         limits:
           memory: 1Gi
+
+  alertmanager:
+    alertmanagerSpec:
+      resources:
+        requests:
+          memory: 256Mi
+        limits:
+          memory: 512Mi
+
+  prometheusOperator:
+    prometheusOperatorSpec:
+      resources:
+        requests:
+          memory: 128Mi
+        limits:
+          memory: 256Mi
+
+  grafana:
+    enabled: false
