@@ -11,3 +11,4 @@ spec:
         job: argocd
       targets:
         - argocd-metrics.argocd:8082
+        - argocd-server-metrics.argocd:8083
