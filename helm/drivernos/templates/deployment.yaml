@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: drivernos
-        image: jackson147/drivernos:0.13
+        image: jackson147/drivernos:0.2
         volumeMounts:
         - name: drivernos-secrets
           mountPath: /run/secrets/
