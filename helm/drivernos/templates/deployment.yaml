@@ -1,0 +1,37 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: drivernos
+  namespace: webapps
+  labels:
+    app: drivernos
+spec:
+  replicas: 1
+  progressDeadlineSeconds: 600
+  revisionHistoryLimit: 2
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: drivernos
+  template:
+    metadata:
+      labels:
+        app: drivernos
+    spec:
+      containers:
+      - name: drivernos
+        image: jackson147/drivernos:0.13
+        volumeMounts:
+        - name: drivernos-secrets
+          mountPath: /run/secrets/
+        - name: drivernos-storage
+          mountPath: /run/app/data
+      volumes:
+      - name: drivernos-secrets
+        secret:
+          secretName: drivernos-secret
+      - name: drivernos-storage
+        persistentVolumeClaim:
+          claimName: drivernos-storage-pvc
