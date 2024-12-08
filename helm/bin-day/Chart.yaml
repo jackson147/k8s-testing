@@ -1,0 +1,4 @@
+apiVersion: v2
+name: bin-day
+version: 0.0.1
+description: bin-day checker
