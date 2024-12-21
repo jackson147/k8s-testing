@@ -9,7 +9,7 @@ spec:
     issuerRef:
         name: letsencrypt-staging
         kind: ClusterIssuer
-    commonName: "*.express-example.newlinkedlist.uk"
+    commonName: "*.express-example.newlinkedlist.com"
     dnsNames:
     - "express-example.newlinkedlist.com"
     - "*.express-example.newlinkedlist.com"
