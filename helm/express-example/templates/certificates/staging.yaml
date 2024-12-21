@@ -11,5 +11,5 @@ spec:
         kind: ClusterIssuer
     commonName: "*.express-example.newlinkedlist.uk"
     dnsNames:
-    - "express-example.newlinkedlist.uk"
-    - "*.express-example.newlinkedlist.uk"
+    - "express-example.newlinkedlist.com"
+    - "*.express-example.newlinkedlist.com"
