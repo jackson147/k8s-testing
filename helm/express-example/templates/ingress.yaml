@@ -15,4 +15,4 @@ spec:
         - name: express-example
           port: 3000
   tls:
-    secretName: express-example-newlinkedlist-com-staging-tls
+    secretName: express-example-newlinkedlist-com-production-tls
