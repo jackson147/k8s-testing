@@ -1,0 +1,25 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: express-example
+  namespace: webapps
+  labels:
+    app: express-example
+spec:
+  replicas: 1
+  progressDeadlineSeconds: 600
+  revisionHistoryLimit: 2
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: express-example
+  template:
+    metadata:
+      labels:
+        app: express-example
+    spec:
+      containers:
+      - name: express-example
+        image: jackson147/express-example:0.1
