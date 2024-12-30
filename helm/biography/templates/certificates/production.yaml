@@ -1,0 +1,15 @@
+# ---
+# apiVersion: cert-manager.io/v1
+# kind: Certificate
+# metadata:
+#     name: biography-newlinkedlist-com-production
+#     namespace: webapps
+# spec:
+#     secretName: biography-newlinkedlist-com-production-tls
+#     issuerRef:
+#         name: letsencrypt-production
+#         kind: ClusterIssuer
+#     commonName: "*.biography.newlinkedlist.com"
+#     dnsNames:
+#     - "biography.newlinkedlist.com"
+#     - "*.biography.newlinkedlist.com"
