@@ -9,10 +9,10 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`biography.newlinkedlist.com`)
+    - match: Host(`johnmartinjackson.com`)
       kind: Rule
       services:
         - name: biography
           port: 80
   tls:
-    secretName: biography-newlinkedlist-com-production-tls
+    secretName: johnmartinjackson-com-staging-tls
