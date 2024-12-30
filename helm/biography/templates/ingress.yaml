@@ -15,4 +15,4 @@ spec:
         - name: biography
           port: 80
   tls:
-    secretName: biography-newlinkedlist-com-staging-tls
+    secretName: biography-newlinkedlist-com-production-tls
