@@ -15,4 +15,4 @@ spec:
         - name: biography
           port: 80
   tls:
-    secretName: johnmartinjackson-com-staging-tls
+    secretName: johnmartinjackson-com-production-tls

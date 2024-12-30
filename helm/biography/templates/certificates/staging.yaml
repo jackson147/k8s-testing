@@ -1,15 +1,15 @@
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-    name: johnmartinjackson-com-staging
-    namespace: webapps
-spec:
-    secretName: johnmartinjackson-com-staging-tls
-    issuerRef:
-        name: letsencrypt-staging
-        kind: ClusterIssuer
-    commonName: "*.johnmartinjackson.com"
-    dnsNames:
-    - "johnmartinjackson.com"
-    - "*.johnmartinjackson.com"
+# ---
+# apiVersion: cert-manager.io/v1
+# kind: Certificate
+# metadata:
+#     name: johnmartinjackson-com-staging
+#     namespace: webapps
+# spec:
+#     secretName: johnmartinjackson-com-staging-tls
+#     issuerRef:
+#         name: letsencrypt-staging
+#         kind: ClusterIssuer
+#     commonName: "*.johnmartinjackson.com"
+#     dnsNames:
+#     - "johnmartinjackson.com"
+#     - "*.johnmartinjackson.com"

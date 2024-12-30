@@ -2,14 +2,14 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-    name: biography-newlinkedlist-com-production
+    name: johnmartinjackson-com-production
     namespace: webapps
 spec:
-    secretName: biography-newlinkedlist-com-production-tls
+    secretName: johnmartinjackson-com-production-tls
     issuerRef:
         name: letsencrypt-production
         kind: ClusterIssuer
-    commonName: "*.biography.newlinkedlist.com"
+    commonName: "*.johnmartinjackson.com"
     dnsNames:
-    - "biography.newlinkedlist.com"
-    - "*.biography.newlinkedlist.com"
+    - "johnmartinjackson.com"
+    - "*.johnmartinjackson.com"
