@@ -12,7 +12,7 @@ spec:
     - match: Host(`biography.newlinkedlist.com`)
       kind: Rule
       services:
-        - name: minio.minio
-          port: 9000
+        - name: biography
+          port: 80
   tls:
     secretName: biography-newlinkedlist-com-staging-tls
