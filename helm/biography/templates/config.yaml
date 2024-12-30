@@ -4,13 +4,20 @@ metadata:
   name: biography-config-map
 data:
   default.conf: |
-    server {
-      listen 80;
-      server_name localhost;
+    user nginx;
+    worker_processes  1;
+    events {
+      worker_connections  10240;
+    }
+    http {
+      server {
+        listen 80;
+        server_name localhost;
 
-      location / {
-        rewrite ^/$ /john-martin-jackson/mj_bio_3.pdf break;
-        proxy_set_header Host $http_host;
-        proxy_pass http://minio:9000/john-martin-jackson/;
+        location / {
+          rewrite ^/$ /john-martin-jackson/mj_bio_3.pdf break;
+          proxy_set_header Host $http_host;
+          proxy_pass http://minio:9000/john-martin-jackson/;
+        }
       }
     }
