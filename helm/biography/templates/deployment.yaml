@@ -25,9 +25,9 @@ spec:
         image: nginx:latest # Replace with your desired Nginx image
         ports:
         - containerPort: 80
-        volumeMounts:
-        - name: biography-config
-          mountPath: /etc/nginx/conf.d/default.conf 
+        # volumeMounts:
+        # - name: biography-config
+        #   mountPath: /etc/nginx/conf.d/default.conf 
       volumes:
       - name: biography-config
         configMap:
