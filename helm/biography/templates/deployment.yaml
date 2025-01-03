@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: biography
-        image: nginx:latest # Replace with your desired Nginx image
+        image: nginx:alpine # Replace with your desired Nginx image
         ports:
         - containerPort: 80
         volumeMounts:
