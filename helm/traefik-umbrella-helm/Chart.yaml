@@ -4,5 +4,5 @@ version: 0.0.2
 description: A Traefik umbrella chart with custom middleware
 dependencies:
 - name: traefik
-  version: ">= 3.1.6"  # Replace with desired Traefik version
+  version: ">= 33.2.1" # Replace with desired Traefik version
   repository: https://traefik.github.io/charts
