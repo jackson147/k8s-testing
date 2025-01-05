@@ -1,0 +1,32 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: bin-day-ny
+  namespace: webapps
+  labels:
+    app: bin-day
+spec:
+  replicas: 1
+  progressDeadlineSeconds: 600
+  revisionHistoryLimit: 2
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: bin-day
+  template:
+    metadata:
+      labels:
+        app: bin-day
+    spec:
+      containers:
+      - name: bin-day-ny
+        image: jackson147/bin-day:1.0.1
+        volumeMounts:
+        - name: bin-configs-ny
+          mountPath: /configs/
+      volumes:
+      - name: bin-configs-ny
+        secret:
+          secretName: bin-day-secret-ny-config
