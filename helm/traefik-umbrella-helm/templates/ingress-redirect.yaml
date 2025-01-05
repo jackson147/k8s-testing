@@ -10,6 +10,7 @@ spec:
     - web
   routes:
     - match: Host(`*.newlinkedlist.uk`) #Old test domain
+      kind: Rule
       services:
         - name: noop@internal
       middlewares:
