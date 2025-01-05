@@ -7,5 +7,5 @@ spec:
   redirectScheme:
     scheme: https 
   redirectRegex:
-    regex: ^(?:https?:\/\/)?(.*\.example\.com)(.*)$ 
-    replacement: https://$1.newdomain.com$2
+    regex: ^(?:https?:\/\/)?(.*\.newlinkedlist\.uk)(.*)$ 
+    replacement: https://$1.newlinkedlist.com$2
