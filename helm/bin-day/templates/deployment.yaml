@@ -26,7 +26,15 @@ spec:
         volumeMounts:
         - name: bin-configs
           mountPath: /configs/
+      - name: bin-day-ny
+        image: jackson147/bin-day:1.0.1
+        volumeMounts:
+        - name: bin-configs-ny
+          mountPath: /configs/
       volumes:
       - name: bin-configs
         secret:
           secretName: bin-day-secret-config
+      - name: bin-configs-ny
+        secret:
+          secretName: bin-day-secret-ny-config
