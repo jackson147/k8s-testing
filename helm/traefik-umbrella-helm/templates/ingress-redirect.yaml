@@ -6,8 +6,7 @@ spec:
   routes:
     - match: Host(`*.newlinkedlist.uk`) #Old test domain
       services:
-        - name: my-service  #Dummy service. Not actually used.
-          port: 8080 
+        - name: noop@internal
       middlewares:
         - name: redirect-to-new-domain
           namespace: traefik  # Adjust if your middleware namespace is different
