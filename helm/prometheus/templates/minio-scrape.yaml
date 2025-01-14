@@ -11,4 +11,4 @@ spec:
         job: minio
       targets:
         - minio.minio:9000
-      metrics_path: /minio/v2/metrics/cluster 
+  metrics_path: /minio/v2/metrics/cluster
