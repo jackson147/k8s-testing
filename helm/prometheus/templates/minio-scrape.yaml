@@ -10,4 +10,5 @@ spec:
     - labels:
         job: minio
       targets:
-        - minio.minio:9000/minio/v2/metrics/cluster
+        - minio.minio:9000
+      metrics_path: /minio/v2/metrics/cluster 
