@@ -2,7 +2,7 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: bin-day-ny
+  name: bin-day-wade
   namespace: webapps
   labels:
     app: bin-day
@@ -21,12 +21,12 @@ spec:
         app: bin-day
     spec:
       containers:
-      - name: bin-day-ny
+      - name: bin-day-wade
         image: jackson147/bin-day:1.0.2
         volumeMounts:
-        - name: bin-configs-ny
+        - name: bin-configs-wade
           mountPath: /configs/
       volumes:
-      - name: bin-configs-ny
+      - name: bin-configs-wade
         secret:
-          secretName: bin-day-secret-ny-config
+          secretName: bin-day-secret-wade-config
