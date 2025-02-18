@@ -1,4 +1,7 @@
 unifi-controller:
+  image:
+    repository: jacobalberty/unifi
+    tag: v9.0
   ingress:
     enabled: false
   persistence:
