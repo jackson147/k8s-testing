@@ -1,7 +1,7 @@
 apiVersion: traefik.io/v1alpha1
 kind: IngressRouteUDP
 metadata:
-  name: unifi-stun-ingress
+  name: stun-ingress
   namespace: unifi
   annotations: 
     kubernetes.io/ingress.class: traefik-external
