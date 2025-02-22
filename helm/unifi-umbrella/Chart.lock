@@ -1,6 +1,6 @@
 dependencies:
-- name: unifi-controller
-  repository: https://qonstrukt.github.io/helm-charts/
-  version: 2.6.1
-digest: sha256:25ea0c1260c300cbbb605810cabdaa01866df2c9ab37416454a55642ba4e757d
-generated: "2024-11-01T09:47:46.803649963Z"
+- name: unifi
+  repository: oci://ghcr.io/mkilchhofer/unifi-chart
+  version: 1.12.3
+digest: sha256:4908e0b85694a22366adda98069bbb8b8fd9da949d7d6ddbba28d49008ee925d
+generated: "2025-02-22T11:35:51.736317511Z"
