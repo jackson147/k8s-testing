@@ -1,8 +1,8 @@
 apiVersion: v2
 name: unifi-controller-umbrella
-version: 0.0.2
+version: 0.0.1
 description: A unifi controller umbrella chart
 dependencies:
-- name: unifi
-  version: ">= 1.12.3"
-  repository: oci://ghcr.io/mkilchhofer/unifi-chart
+- name: unifi-controller
+  version: ">= 2.6.1"
+  repository: https://qonstrukt.github.io/helm-charts/
