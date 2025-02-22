@@ -10,5 +10,5 @@ spec:
     - unifi-discovery
   routes:
   - services:
-    - name: unifi-controller-udp
+    - name: unifi-discovery
       port: 10001

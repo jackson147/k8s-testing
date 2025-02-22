@@ -10,5 +10,5 @@ spec:
     - unifi-stun
   routes:
   - services:
-    - name: unifi-controller-udp
+    - name: unifi-stun
       port: 3478

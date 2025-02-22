@@ -11,7 +11,7 @@ spec:
   routes:
   - match: HostSNI(`newlinkedlist.com:8080`)
     services:
-    - name: unifi-controller-tcp
+    - name: unifi-controller
       port: 8080
   tls:
     secretName: unifi-newlinkedlist-com-production-tls
