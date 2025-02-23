@@ -9,9 +9,10 @@ spec:
   entryPoints:
     - unifi-inform
   routes:
-  - match: HostSNI(`unifi.newlinkedlist.com`)
+  - match: HostSNI(`unifi.newlinkedlist.com:8080`)
     services:
     - name: unifi-controller
       port: 8080
+      nativeLB: false
   tls:
     secretName: unifi-newlinkedlist-com-production-tls
