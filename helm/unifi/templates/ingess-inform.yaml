@@ -9,7 +9,7 @@ spec:
   entryPoints:
     - unifi-inform
   routes:
-  - match: HostSNI(`*`)
+  - match: HostSNI(`unifi.newlinkedlist.com:8080`)
     services:
     - name: unifi-controller
       port: 8080
