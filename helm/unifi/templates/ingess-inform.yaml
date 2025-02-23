@@ -31,3 +31,4 @@ spec:
   - match: HostSNI(`*`)
     services:
     - name: unifi-controller
+      port: 8080
