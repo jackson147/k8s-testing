@@ -21,9 +21,12 @@ traefik:
 
   ports:
     web:
-      redirectTo:
-        port: websecure
-        priority: 10
+      redirections:
+        entrypoint:
+          port: websecure
+          scheme: https
+          permenent: true
+          priority: 10
     websecure:
       http3: 
         enabled: true
