@@ -7,3 +7,9 @@ unifi:
     type: "LoadBalancer"
   stunService:
     type: "LoadBalancer"
+  captivePortalService:
+    enabled: false
+  syslogService:
+    enabled: false
+  speedtestService:
+    enabled: false
