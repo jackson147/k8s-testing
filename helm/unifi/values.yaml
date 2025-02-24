@@ -3,3 +3,7 @@ unifi:
     enabled: false
   controllerService:
     type: "LoadBalancer"
+  discoveryService:
+    type: "LoadBalancer"
+  stunService:
+    type: "LoadBalancer"
