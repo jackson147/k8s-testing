@@ -13,3 +13,5 @@ unifi:
     enabled: false
   speedtestService:
     enabled: false
+  persistence:
+    enabled: true
