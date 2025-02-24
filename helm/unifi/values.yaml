@@ -2,4 +2,4 @@ unifi:
   ingress:
     enabled: false
   controllerService:
-    type: "ClusterIP"
+    type: "LoadBalancer"
