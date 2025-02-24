@@ -1,3 +1,5 @@
 unifi:
   ingress:
     enabled: false
+  controllerService:
+    type: "ClusterIP"
