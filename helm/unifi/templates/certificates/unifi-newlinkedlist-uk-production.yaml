@@ -2,21 +2,6 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-    name: unifi-newlinkedlist-uk-production
-    namespace: unifi
-spec:
-    secretName: unifi-newlinkedlist-uk-production-tls
-    issuerRef:
-        name: letsencrypt-production
-        kind: ClusterIssuer
-    commonName: "*.unifi.newlinkedlist.uk"
-    dnsNames:
-    - "unifi.newlinkedlist.uk"
-    - "*.unifi.newlinkedlist.uk"
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
     name: unifi-newlinkedlist-com-production
     namespace: unifi
 spec:
