@@ -4,5 +4,5 @@ version: 0.0.1
 description: A unifi controller umbrella chart
 dependencies:
 - name: unifi
-  version: ">= 1.12.3"
+  version: ">= 1.12.4"
   repository: oci://ghcr.io/mkilchhofer/unifi-chart
