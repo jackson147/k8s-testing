@@ -48,6 +48,8 @@ traefik:
       port: 9100
       exposedPort: 9100
       protocol: TCP
+    traefik:
+      exposedPort: 8081
 
   metrics:
     prometheus:
