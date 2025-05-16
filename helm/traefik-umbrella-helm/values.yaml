@@ -49,6 +49,7 @@ traefik:
       exposedPort: 9100
       protocol: TCP
     traefik:
+      port: 8081
       exposedPort: 8081
 
   metrics:
