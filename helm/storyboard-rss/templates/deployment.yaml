@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: storyboard
-        image: jackson147/storyboard-rss:latest
+        image: jackson147/storyboard-rss:0.2
         env:
         - name: PORT
           value: {{ quote .Values.port }}
