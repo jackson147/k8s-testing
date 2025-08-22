@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+    name: argo-newlinkedlist-com-staging
+    namespace: argocd
+spec:
+    secretName: argocd-newlinkedlist-com-staging-tls
+    issuerRef:
+        name: letsencrypt-staging
+        kind: ClusterIssuer
+    commonName: "*.argocd.newlinkedlist.uk"
+    dnsNames:
+    - "argocd.newlinkedlist.uk"
+    - "*.argocd.newlinkedlist.uk"

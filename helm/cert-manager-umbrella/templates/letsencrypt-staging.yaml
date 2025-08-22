@@ -19,5 +19,4 @@ spec:
                             key: cloudflare-token
               selector:
                 dnsZones:
-                    - "newlinkedlist.com"
-                    - "johnmartinjackson.com"
+                    - "newlinkedlist.uk"
