@@ -1,7 +1,7 @@
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
-  name: controller-com
+  name: controller-uk
   namespace: unifi
   annotations: 
     kubernetes.io/ingress.class: traefik-external
@@ -9,7 +9,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`unifi.newlinkedlist.com`)
+    - match: Host(`unifi.newlinkedlist.uk`)
       kind: Rule
       services:
         - name: unifi-gui
@@ -17,4 +17,4 @@ spec:
           serversTransport: no-verify-tls
           scheme: https
   tls:
-    secretName: unifi-newlinkedlist-com-production-tls
+    secretName: unifi-newlinkedlist-uk-production-tls
