@@ -9,10 +9,10 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`minio.newlinkedlist.uk`)
+    - match: Host(`minio.newlinkedlist.com`)
       kind: Rule
       services:
         - name: minio
           port: 9000
   tls:
-    secretName: minio-newlinkedlist-uk-production-tls
+    secretName: minio-newlinkedlist-com-production-tls

@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+    name: minio-newlinkedlist-com-production
+    namespace: minio
+spec:
+    secretName: minio-newlinkedlist-com-production-tls
+    issuerRef:
+        name: letsencrypt-production
+        kind: ClusterIssuer
+    commonName: "*.minio.newlinkedlist.com"
+    dnsNames:
+    - "minio.newlinkedlist.com"
+    - "*.minio.newlinkedlist.com"

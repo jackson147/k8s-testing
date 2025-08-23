@@ -9,7 +9,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`traefik.newlinkedlist.uk`)
+    - match: Host(`traefik.newlinkedlist.com`)
       kind: Rule
       middlewares:
         - name: traefik-dashboard-basicauth
@@ -18,4 +18,4 @@ spec:
         - name: api@internal
           kind: TraefikService
   tls:
-    secretName: traefik-newlinkedlist-uk-production-tls
+    secretName: traefik-newlinkedlist-com-production-tls
