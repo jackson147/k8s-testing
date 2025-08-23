@@ -11,4 +11,5 @@ spec:
     commonName: "*.minio.newlinkedlist.uk"
     dnsNames:
     - "minio.newlinkedlist.uk"
+    - "console.minio.newlinkedlist.uk"
     - "*.minio.newlinkedlist.uk"
