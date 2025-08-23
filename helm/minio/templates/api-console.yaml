@@ -1,7 +1,7 @@
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
-  name: minio-console-ingress
+  name: minio-console
   namespace: minio
   annotations: 
     kubernetes.io/ingress.class: traefik-external
@@ -12,7 +12,7 @@ spec:
     - match: Host(`console.minio.newlinkedlist.uk`)
       kind: Rule
       services:
-        - name: minio
-          port: 9001
+        - name: minio-console
+          port: 9090
   tls:
     secretName: minio-newlinkedlist-uk-production-tls
