@@ -23,3 +23,10 @@ spec:
       containers:
       - name: wadebridge-games
         image: jackson147/wadebridge-gaming-group:0.1
+        volumeMounts:
+        - name: env-config
+          mountPath: /app/
+      volumes:
+      - name: env-config
+        secret:
+          secretName: wadebridge-games-env
