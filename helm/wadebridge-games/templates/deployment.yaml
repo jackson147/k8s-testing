@@ -25,7 +25,7 @@ spec:
         image: jackson147/wadebridge-gaming-group:0.1
         volumeMounts:
         - name: env-config
-          mountPath: /app/
+          mountPath: /app/.env
           subPath: .env
       volumes:
       - name: env-config
