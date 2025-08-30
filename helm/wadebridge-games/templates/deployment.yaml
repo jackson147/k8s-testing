@@ -1,0 +1,25 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: wadebridge-games
+  namespace: webapps
+  labels:
+    app: wadebridge-games
+spec:
+  replicas: 1
+  progressDeadlineSeconds: 600
+  revisionHistoryLimit: 2
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: wadebridge-games
+  template:
+    metadata:
+      labels:
+        app: wadebridge-games
+    spec:
+      containers:
+      - name: wadebridge-games
+        image: jackson147/wadebridge-gaming-group:0.1

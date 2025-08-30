@@ -1,0 +1,4 @@
+apiVersion: v2
+name: wadebridge-games
+version: 0.0.1
+description: wadebridge-games - t3 stack app for wadebridge gaming group
