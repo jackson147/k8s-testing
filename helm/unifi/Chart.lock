@@ -1,6 +1,6 @@
 dependencies:
 - name: unifi
   repository: oci://ghcr.io/mkilchhofer/unifi-chart
-  version: 1.13.1
-digest: sha256:ce8dff4ed69d657e90e46ecfa74e9deb03a5b34852c7784b5a035352bce3886e
-generated: "2025-07-12T11:31:52.705617919+01:00"
+  version: 1.14.0
+digest: sha256:f570c18c6c56532547611ca9c4211e8ab2ab81d76d31bfd89b43e34ed60b8634
+generated: "2025-09-27T14:41:19.936398325+01:00"
