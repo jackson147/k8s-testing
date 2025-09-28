@@ -1,33 +1,83 @@
-kube-prometheus-stack:
-  prometheus:
-    prometheusSpec:
-      scrapeConfigSelector:
-        matchLabels:
-          prometheus: system-monitoring-prometheus
-      resources:
-        requests:
-          memory: 512Mi
-        limits:
-          memory: 1Gi
+# monitoring-local-path-values.yaml
 
-  alertmanager:
-    alertmanagerSpec:
-      resources:
-        requests:
-          memory: 256Mi
-        limits:
-          memory: 512Mi
+# This file configures the kube-prometheus-stack for moderate RAM usage 
+# on a small cluster (like K3s) and uses the 'local-path' StorageClass.
 
-  prometheusOperator:
-    prometheusOperatorSpec:
-      scrapeConfigSelector:
-        matchLabels:
-          prometheus: system-monitoring-prometheus
-      resources:
-        requests:
-          memory: 128Mi
-        limits:
-          memory: 256Mi
+# 1. Disable Alertmanager - Significant RAM Saving!
+alertmanager:
+  enabled: false
 
-  grafana:
-    enabled: false
+# --------------------------------------------------------------------------
+# 2. Prometheus Configuration (The primary memory consumer)
+# --------------------------------------------------------------------------
+prometheus:
+  prometheusSpec:
+    # Persistence Configuration (for your metric data)
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          # Explicitly setting the default StorageClass to local-path
+          storageClassName: "local-path"
+          resources:
+            requests:
+              storage: 20Gi # Moderate size, adjust as needed.
+
+    # Moderate RAM settings for the Prometheus server Pod
+    resources:
+      requests:
+        cpu: 100m
+        memory: 768Mi 
+      limits:
+        cpu: 1000m
+        memory: 1536Mi # 1.5Gi - Safe ceiling for moderate load
+
+    # Moderate data retention
+    retention: 15d 
+
+    # Optimization for K3s on a small server: disable redundant control plane scrapes
+    kubeControllerManager:
+      enabled: false     
+    kubeScheduler:
+      enabled: false     
+    kubeEtcd:
+      enabled: false     # K3s uses embedded SQLite
+
+# --------------------------------------------------------------------------
+# 3. Grafana Configuration
+# --------------------------------------------------------------------------
+grafana:
+  # Moderate RAM settings for the Grafana Pod
+  resources:
+    requests:
+      cpu: 50m
+      memory: 256Mi
+    limits:
+      cpu: 100m
+      memory: 512Mi
+  
+  # Persistence for custom dashboards and configuration
+  persistence:
+    enabled: true
+    # Explicitly setting the default StorageClass to local-path
+    storageClassName: "local-path"
+    size: 2Gi 
+
+# --------------------------------------------------------------------------
+# 4. Core Exporters (Minimal RAM required)
+# --------------------------------------------------------------------------
+kube-state-metrics:
+  resources:
+    requests:
+      cpu: 50m
+      memory: 150Mi
+    limits:
+      cpu: 100m
+      memory: 300Mi
+nodeExporter:
+  resources:
+    requests:
+      cpu: 10m
+      memory: 40Mi
+    limits:
+      cpu: 20m
+      memory: 80Mi
