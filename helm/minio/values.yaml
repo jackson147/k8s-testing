@@ -1,4 +1,5 @@
-auth:
-  existingSecret: minio-secret
-  existingSecretUserKey: root-user
-  existingSecretPasswordKey: root-password
+minio:
+  auth:
+    existingSecret: minio-secret
+    existingSecretUserKey: root-user
+    existingSecretPasswordKey: root-password
