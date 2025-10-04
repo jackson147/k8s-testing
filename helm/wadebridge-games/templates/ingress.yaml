@@ -28,7 +28,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`wadebridgegames.com`)
+    - match: Host(`wadebridgegames.com`) || Host(`www.wadebridgegames.com`)
       kind: Rule
       services:
         - name: wadebridge-games
