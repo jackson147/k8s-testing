@@ -13,3 +13,18 @@ spec:
     dnsNames:
     - "wadebridgegames.newlinkedlist.com"
     - "*.wadebridgegames.newlinkedlist.com"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+    name: wadebridge-games-com-production
+    namespace: webapps
+spec:
+    secretName: wadebridge-games-com-production-tls
+    issuerRef:
+        name: letsencrypt-production
+        kind: ClusterIssuer
+    commonName: "*.wadebridgegames.com"
+    dnsNames:
+    - "wadebridgegames.com"
+    - "*.wadebridgegames.com"
