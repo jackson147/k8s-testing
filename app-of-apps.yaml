@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-of-apps
+spec:
+  source:
+    repoURL: https://github.com/jackson147/k8s-testing.git
+    targetRevision: HEAD
+    path: apps
+  destination:
+    name: in-cluster
+    namespace: argocd
+  project: default

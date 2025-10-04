@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/jackson147/k8s-testing.git
+    targetRevision: HEAD
+    path: helm/prometheus
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: prometheus
+
+  syncPolicy:
+    syncOptions:
+    - CreateNameSpace=true
+    - ServerSideApply=true
+
+    automated:
+      selfHeal: true
+      prune: true
