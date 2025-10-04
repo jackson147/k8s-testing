@@ -1,0 +1,8 @@
+apiVersion: v2
+name: minio-operator-umbrella
+version: 0.0.1
+description: A minio-operator umbrella chart
+dependencies:
+- name: minio-operator
+  version: ">= 4.3.7"
+  repository: https://operator.min.io/
