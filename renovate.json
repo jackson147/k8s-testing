@@ -6,21 +6,8 @@
   "ignoreTests": true,
   "packageRules": [
     {
-      "matchDatasources": ["docker"],
-      "groupName": "Docker Images",
-      "automerge": true,
-      "major": {
-        "automerge": false,
-        "enabled": true
-      },
-      "minor": {
-        "automerge": true,
-        "enabled": true
-      },
-      "patch": {
-        "automerge": true,
-        "enabled": true
-      }
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true 
     }
   ]
 }
