@@ -47,6 +47,8 @@ kube-prometheus-stack:
   # 3. Grafana Configuration
   # --------------------------------------------------------------------------
   grafana:
+    admin:
+      existingSecret: "grafana-admin-credentials"
     # Moderate RAM settings for the Grafana Pod
     resources:
       requests:
