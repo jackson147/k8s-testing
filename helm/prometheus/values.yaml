@@ -51,6 +51,8 @@ kube-prometheus-stack:
       enabled: false
     admin:
       existingSecret: "grafana-admin-credentials"
+      userKey: admin-user
+      passwordKey: admin-password
     # Moderate RAM settings for the Grafana Pod
     resources:
       requests:
