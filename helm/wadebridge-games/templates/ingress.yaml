@@ -12,7 +12,7 @@ spec:
     - match: Host(`wadebridgegames.newlinkedlist.com`)
       kind: Rule
       services:
-        - name: wadebridge-games
+        - name: wadebridge-games-dev
           port: 80
   tls:
     secretName: wadebridge-games-newlinkedlist-com-production-tls
