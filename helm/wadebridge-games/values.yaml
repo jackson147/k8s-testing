@@ -1,4 +1,4 @@
 image:
   repository: jackson147/wadebridge-gaming-group
-  tag: 1.0.21 # Renovate will target this line
+  tag: 1.0.22 # Renovate will target this line
   pullPolicy: IfNotPresent
