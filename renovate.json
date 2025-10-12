@@ -4,6 +4,9 @@
     "config:recommended"
   ],
   "ignoreTests": true,
+  "helmv3": {
+    "rangeStrategy": "bump"
+  },
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch"],
