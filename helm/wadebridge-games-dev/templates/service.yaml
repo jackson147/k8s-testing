@@ -2,11 +2,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: wadebridge-games
+  name: wadebridge-games-dev
   namespace: webapps
 spec:
   selector:
-    app: wadebridge-games
+    app: wadebridge-games-dev
   ports:
   - name: http
     targetPort: 3000

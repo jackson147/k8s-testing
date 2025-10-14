@@ -1,0 +1,14 @@
+image:
+  repository: jackson147/wadebridge-gaming-group
+  tag: 1.1.3 # Renovate will target this line
+  devTag: dev
+  pullPolicy: IfNotPresent
+
+postgresql:
+  enabled: true
+  auth:
+    username: "wadebridge_user"
+    database: "wbgg"
+    existingSecret: "wadebridge-postgres-credentials"
+    secretKeys:
+      userPasswordKey: "password"

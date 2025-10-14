@@ -2,25 +2,26 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: wadebridge-games
+  name: wadebridge-games-dev
   namespace: webapps
   labels:
-    app: wadebridge-games
+    app: wadebridge-games-dev
 spec:
   replicas: 1
   progressDeadlineSeconds: 600
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      app: wadebridge-games
+      app: wadebridge-games-dev
   template:
     metadata:
       labels:
-        app: wadebridge-games
+        app: wadebridge-games-dev
     spec:
       containers:
-      - name: wadebridge-games
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+      - name: wadebridge-games-dev
+        imagePullPolicy: Always
+        image: "{{ .Values.image.repository }}:{{ .Values.image.devTag }}"
         volumeMounts:
         - name: env-config
           mountPath: /app/.env
