@@ -22,11 +22,6 @@ spec:
       - name: wadebridge-games-dev
         imagePullPolicy: Always
         image: "{{ .Values.image.repository }}:{{ .Values.image.devTag }}"
-        volumeMounts:
-        - name: env-config
-          mountPath: /app/.env
-          subPath: .env
-      volumes:
-      - name: env-config
-        secret:
-          secretName: wadebridge-games-env-dev
+        envFrom:
+        - secretRef:
+            name: wadebridge-games-env-dev
