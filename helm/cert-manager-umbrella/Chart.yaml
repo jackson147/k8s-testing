@@ -4,5 +4,5 @@ version: 0.0.1
 description: A cert-manager umbrella chart
 dependencies:
 - name: cert-manager
-  version: ">= 1.19.0"
+  version: ">= 1.19.1"
   repository: https://charts.jetstack.io
