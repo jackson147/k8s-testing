@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wadebridge-games-pg-admin-dev
+  namespace: webapps
+spec:
+  selector:
+    app: pgadmin-dev
+  ports:
+  - name: http
+    targetPort: 80
+    port: 80

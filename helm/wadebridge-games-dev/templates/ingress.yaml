@@ -31,7 +31,7 @@ spec:
     - match: Host(`pg.wadebridgegames.newlinkedlist.com`)
       kind: Rule
       services:
-        - name: pg-wadebridge-games-dev
+        - name: wadebridge-games-pg-admin-dev
           port: 80
   tls:
     secretName: pg-wadebridge-games-newlinkedlist-com-production-tls
