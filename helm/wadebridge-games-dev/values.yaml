@@ -9,6 +9,6 @@ postgresql:
   auth:
     username: "wadebridge_user"
     database: "wbgg"
-    existingSecret: "wadebridge-postgres-credentials"
+    existingSecret: "wadebridge-postgres-credentials-dev"
     secretKeys:
       userPasswordKey: "password"

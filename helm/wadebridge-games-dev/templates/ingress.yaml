@@ -1,7 +1,7 @@
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
-  name: wadebridge-games
+  name: wadebridge-games-dev
   namespace: webapps
   annotations: 
     kubernetes.io/ingress.class: traefik-external
@@ -16,3 +16,22 @@ spec:
           port: 80
   tls:
     secretName: wadebridge-games-newlinkedlist-com-production-tls
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: pg-wadebridge-games-dev
+  namespace: webapps
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`pg.wadebridgegames.newlinkedlist.com`)
+      kind: Rule
+      services:
+        - name: pg-wadebridge-games-dev
+          port: 80
+  tls:
+    secretName: pg-wadebridge-games-newlinkedlist-com-production-tls

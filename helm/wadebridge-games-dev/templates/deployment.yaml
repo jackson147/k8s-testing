@@ -25,3 +25,29 @@ spec:
         envFrom:
         - secretRef:
             name: wadebridge-games-env-dev
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: pgadmin-dev
+  namespace: webapps
+  labels:
+    app: pgadmin-dev
+spec:
+  replicas: 1
+  progressDeadlineSeconds: 600
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: pgadmin-dev
+  template:
+    metadata:
+      labels:
+        app: pgadmin-dev
+    spec:
+      containers:
+      - name: pgadmin-dev
+        image: "dpage/pgadmin4:latest"
+        envFrom:
+        - secretRef:
+            name: wadebridge-pgadmin-credentials-dev
