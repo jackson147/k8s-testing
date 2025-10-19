@@ -3,3 +3,12 @@ image:
   tag: 1.2.1 # Renovate will target this line
   devTag: dev
   pullPolicy: IfNotPresent
+
+postgresql:
+  enabled: true
+  auth:
+    username: "wadebridge_user"
+    database: "wbgg"
+    existingSecret: "wadebridge-postgres-credentials"
+    secretKeys:
+      userPasswordKey: "password"

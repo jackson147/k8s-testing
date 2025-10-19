@@ -29,3 +29,36 @@ spec:
       - name: env-config
         secret:
           secretName: wadebridge-games-env
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: pgadmin
+  namespace: webapps
+  labels:
+    app: pgadmin
+spec:
+  replicas: 1
+  progressDeadlineSeconds: 600
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: pgadmin
+  template:
+    metadata:
+      labels:
+        app: pgadmin
+    spec:
+      volumes:
+        - name: pgadmin-data
+          persistentVolumeClaim:
+            claimName: pgadmin-data
+      containers:
+      - name: pgadmin
+        image: "dpage/pgadmin4:latest"
+        envFrom:
+        - secretRef:
+            name: wadebridge-pgadmin-credentials
+        volumeMounts:
+        - name: pgadmin-data
+          mountPath: /var/lib/pgadmin
