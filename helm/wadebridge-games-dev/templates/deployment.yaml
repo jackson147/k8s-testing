@@ -45,9 +45,16 @@ spec:
       labels:
         app: pgadmin-dev
     spec:
+      volumes:
+        - name: pgadmin-dev-data
+          persistentVolumeClaim:
+            claimName: pgadmin-dev-data
       containers:
       - name: pgadmin-dev
         image: "dpage/pgadmin4:latest"
         envFrom:
         - secretRef:
             name: wadebridge-pgadmin-credentials-dev
+        volumeMounts:
+        - name: pgadmin-dev-data
+          mountPath: /var/lib/pgadmin
