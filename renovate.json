@@ -11,12 +11,6 @@
     {
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true 
-    },
-    {
-      "matchDepNames": ["unifi"],
-      "matchPackageFile": "helm/unifi/Chart.yaml",
-      "datasource": "helm",
-      "versioning": "semver"
     }
   ]
 }
