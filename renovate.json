@@ -17,7 +17,7 @@
       ],
       // This regex extracts the version from the unifi chart's dependency block
       "matchStrings": [
-        "name: unifi\\s*\\n\\s*version: \"(?<currentValue>.*?)\"\\s*\\n\\s*repository: \"oci://ghcr.io/mkilchhofer/unifi-chart\""
+        "name: unifi\\s+version:\\s*\"(?<currentValue>.*?)\"\\s+repository:\\s*\"oci://ghcr\\.io/mkilchhofer/unifi-chart\""
       ],
       // Forces the source to look at GitHub Releases
       "datasourceTemplate": "github-releases",
