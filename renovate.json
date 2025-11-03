@@ -7,34 +7,21 @@
   "helmv3": {
     "rangeStrategy": "bump"
   },
-  "packageRules": [
+  "customManagers": [
     {
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true 
-    },
-    {
-      "description": "Fix Unifi Chart Datasource (Docker -> GitHub Releases)",
-      // This matches the misidentified internal package name
-      "matchPackageNames": ["ghcr.io/mkilchhofer/unifi-chart/unifi"],
-      // Use replaceDatasource to fix the detection
-      "replaceDatasource": "github-releases",
-      // Use lookupName to specify the exact repo/owner
-      "lookupName": "mkilchhofer/unifi-chart",
-      // Ensure the versioning is correct for GitHub releases
-      "versioning": "semver"
-    }
-  ],
-  "regexManagers": [
-    {
+      "customType": "regex",
       "description": "Unifi Chart GitHub Releases Override",
-      "fileMatch": ["(^|/)Chart\\.yaml$"],
-      // Regex to capture the 'version' value for the 'unifi' chart dependency
-      // This is a common format, you may need to adjust the version string format
+      // File pattern needed for custom managers (Renovate converted this to array)
+      "managerFilePatterns": [
+        "(^|/)Chart\\.yaml$"
+      ],
+      // This regex extracts the version from the unifi chart's dependency block
       "matchStrings": [
         "name: unifi\\s*\\n\\s*version: \"(?<currentValue>.*?)\"\\s*\\n\\s*repository: \"oci://ghcr.io/mkilchhofer/unifi-chart\""
       ],
+      // Forces the source to look at GitHub Releases
       "datasourceTemplate": "github-releases",
-      // This is the owner/repo format for GitHub
+      // Provides the owner/repo name for the GitHub datasource
       "depNameTemplate": "mkilchhofer/unifi-chart",
       "versioningTemplate": "semver"
     }
