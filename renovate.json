@@ -26,11 +26,12 @@
     {
       "customType": "regex",
       "description": "Unifi Chart GitHub Releases Override",
-      "managerFilePatterns": [
-        "(^|/)Chart\\.yaml$"
+      "fileMatch": [
+        "helm/unifi/Chart\\.yaml$" // Target ONLY this specific file
       ],
       "matchStrings": [
-        "name: unifi[\\r\\n\\s]+version:\\s*\"(?<currentValue>.*?)\"[\\r\\n\\s]+repository:\\s*oci://ghcr\\.io/mkilchhofer/unifi-chart"
+        // Match the version line, allowing for optional quotes.
+        "version:\\s*['\"]?(?<currentValue>\\S+?)['\"]?"
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "mkilchhofer/unifi-chart",
