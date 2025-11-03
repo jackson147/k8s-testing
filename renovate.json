@@ -1,7 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    "mergeConfidence:all-badges"
   ],
   "ignoreTests": true,
   "helmv3": {
@@ -16,21 +17,26 @@
       "automerge": true
     },
     {
-      "description": "Ignore incorrect unifi-chart Docker dependency detected by helmv3",
-      "matchDatasources": ["docker"],
-      "matchPackageNames": ["ghcr.io/mkilchhofer/unifi-chart/unifi"],
+      "description": "Ignore the incorrect Docker dependency detection from helmv3 for Unifi OCI repo.",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "ghcr.io/mkilchhofer/unifi-chart/unifi"
+      ],
       "enabled": false
     }
   ],
   "customManagers": [
     {
       "customType": "regex",
-      "description": "Unifi Chart GitHub Releases Override",
-      "managerFilePatterns": [
-        "helm/unifi/Chart\\.yaml" // Match the path, no starting/ending anchors or slashes
+      "description": "Force Unifi Chart dependency to track GitHub Releases.",
+      "fileMatch": [
+        "helm/unifi/Chart\\.yaml"
       ],
       "matchStrings": [
-        "version:\\s*['\"]?(?<currentValue>\\S+?)['\"]?" // Simple version extraction
+        // This is the critical, precise regex: it looks for 'name: unifi' AND THEN 'version: "..."'
+        "name: unifi\\s*\\n\\s*version: \"(?<currentValue>.*?)\"" 
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "mkilchhofer/unifi-chart",
