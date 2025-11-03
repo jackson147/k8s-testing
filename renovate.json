@@ -40,7 +40,8 @@
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "mkilchhofer/unifi-chart",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "semver",
+      "extractVersion": "^unifi-(?<version>.*)$"
     }
   ]
 }
