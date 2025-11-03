@@ -3,6 +3,7 @@ kind: Application
 metadata:
   name: unifi
   namespace: argocd
+  argocd.argoproj.io/sync-options: ForceHelmFetch=true
 spec:
   project: default
 
