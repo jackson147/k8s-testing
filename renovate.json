@@ -23,5 +23,20 @@
       // Ensure the versioning is correct for GitHub releases
       "versioning": "semver"
     }
+  ],
+  "regexManagers": [
+    {
+      "description": "Unifi Chart GitHub Releases Override",
+      "fileMatch": ["(^|/)Chart\\.yaml$"],
+      // Regex to capture the 'version' value for the 'unifi' chart dependency
+      // This is a common format, you may need to adjust the version string format
+      "matchStrings": [
+        "name: unifi\\s*\\n\\s*version: \"(?<currentValue>.*?)\"\\s*\\n\\s*repository: \"oci://ghcr.io/mkilchhofer/unifi-chart\""
+      ],
+      "datasourceTemplate": "github-releases",
+      // This is the owner/repo format for GitHub
+      "depNameTemplate": "mkilchhofer/unifi-chart",
+      "versioningTemplate": "semver"
+    }
   ]
 }
