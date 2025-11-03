@@ -25,6 +25,17 @@
         "ghcr.io/mkilchhofer/unifi-chart/unifi"
       ],
       "enabled": false
+    },
+    {
+      "description": "Apply tag cleaning to the Unifi Chart dependency to find 1.14.1, etc.",
+      "matchPackageNames": [
+        "mkilchhofer/unifi-chart"
+      ],
+      "matchDatasources": [
+        "github-releases"
+      ],
+      // This is now in the valid location: inside a package rule
+      "extractVersion": "^unifi-(?<version>.*)$" 
     }
   ],
   "customManagers": [
@@ -35,13 +46,12 @@
         "helm/unifi/Chart\\.yaml"
       ],
       "matchStrings": [
-        // This is the critical, precise regex: it looks for 'name: unifi' AND THEN 'version: "..."'
-        "name: unifi\\s*\\n\\s*version: \"(?<currentValue>.*?)\"" 
+        "name: unifi\\s*\\n\\s*version: \"(?<currentValue>.*?)\""
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "mkilchhofer/unifi-chart",
-      "versioningTemplate": "semver",
-      "extractVersion": "^unifi-(?<version>.*)$"
+      "versioningTemplate": "semver"
+      // Note: extractVersion is NOT here
     }
   ]
 }
