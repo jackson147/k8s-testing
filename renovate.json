@@ -11,6 +11,13 @@
     {
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true 
+    },
+    {
+      "description": "Fix unifi chart dependency detection",
+      "matchDepNames": ["unifi"],
+      "matchPackageNames": ["ghcr.io/mkilchhofer/unifi-chart/unifi"],
+      "datasource": "github-releases",
+      "depNameTemplate": "mkilchhofer/unifi-chart"
     }
   ]
 }
