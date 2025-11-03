@@ -7,21 +7,32 @@
   "helmv3": {
     "rangeStrategy": "bump"
   },
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true
+    },
+    {
+      "description": "Ignore incorrect unifi-chart Docker dependency detected by helmv3",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["ghcr.io/mkilchhofer/unifi-chart/unifi"],
+      "enabled": false
+    }
+  ],
   "customManagers": [
     {
       "customType": "regex",
       "description": "Unifi Chart GitHub Releases Override",
-      // File pattern needed for custom managers (Renovate converted this to array)
       "managerFilePatterns": [
         "(^|/)Chart\\.yaml$"
       ],
-      // This regex extracts the version from the unifi chart's dependency block
       "matchStrings": [
         "name: unifi[\\r\\n\\s]+version:\\s*\"(?<currentValue>.*?)\"[\\r\\n\\s]+repository:\\s*oci://ghcr\\.io/mkilchhofer/unifi-chart"
       ],
-      // Forces the source to look at GitHub Releases
       "datasourceTemplate": "github-releases",
-      // Provides the owner/repo name for the GitHub datasource
       "depNameTemplate": "mkilchhofer/unifi-chart",
       "versioningTemplate": "semver"
     }
