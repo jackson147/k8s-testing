@@ -13,11 +13,15 @@
       "automerge": true 
     },
     {
-      "description": "Fix unifi chart dependency detection",
-      "matchDepNames": ["unifi"],
+      "description": "Fix Unifi Chart Datasource (Docker -> GitHub Releases)",
+      // This matches the misidentified internal package name
       "matchPackageNames": ["ghcr.io/mkilchhofer/unifi-chart/unifi"],
-      "datasource": "github-releases",
-      "depNameTemplate": "mkilchhofer/unifi-chart"
+      // Use replaceDatasource to fix the detection
+      "replaceDatasource": "github-releases",
+      // Use lookupName to specify the exact repo/owner
+      "lookupName": "mkilchhofer/unifi-chart",
+      // Ensure the versioning is correct for GitHub releases
+      "versioning": "semver"
     }
   ]
 }
