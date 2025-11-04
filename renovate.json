@@ -34,16 +34,15 @@
       "matchDatasources": [
         "github-releases"
       ],
-      // This is now in the valid location: inside a package rule
-      "extractVersion": "^unifi-(?<version>.*)$" 
+      "extractVersion": "^unifi-(?<version>.*)$"
     }
   ],
   "customManagers": [
     {
       "customType": "regex",
       "description": "Force Unifi Chart dependency to track GitHub Releases.",
-      "fileMatch": [
-        "helm/unifi/Chart\\.yaml"
+      "managerFilePatterns": [
+        "/helm/unifi/Chart\\.yaml/"
       ],
       "matchStrings": [
         "name: unifi\\s*\\n\\s*version: \"(?<currentValue>.*?)\""
@@ -51,7 +50,6 @@
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "mkilchhofer/unifi-chart",
       "versioningTemplate": "semver"
-      // Note: extractVersion is NOT here
     }
   ]
 }
