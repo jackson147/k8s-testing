@@ -1,6 +1,6 @@
 image:
   repository: jackson147/wadebridge-gaming-group
-  tag: 1.3.24 # Renovate will target this line
+  tag: 1.4.1
   devTag: dev
   pullPolicy: IfNotPresent
 
