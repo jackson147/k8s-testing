@@ -1,32 +1,32 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: wadebridge-games-dev
-  namespace: argocd
-  annotations:
-    # 1. Define the image to watch, with an alias 'wadebridge-dev'
-    argocd-image-updater.argoproj.io/image-list: wadebridge-dev=jackson147/wadebridge-gaming-group:dev
-    # 2. Set the update strategy to 'latest' to track the digest of the 'dev' tag
-    argocd-image-updater.argoproj.io/wadebridge-dev.update-strategy: latest
-    # 3. Use the 'argocd' write-back method to update the app without a Git commit
-    argocd-image-updater.argoproj.io/write-back-method: argocd
-    # 4. Explicitly allow the updater to track the mutable 'dev' tag
-    argocd-image-updater.argoproj.io/wadebridge-dev.allow-tags: regexp:^dev$
-spec:
-  project: default
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: wadebridge-games-dev
+#   namespace: argocd
+#   annotations:
+#     # 1. Define the image to watch, with an alias 'wadebridge-dev'
+#     argocd-image-updater.argoproj.io/image-list: wadebridge-dev=jackson147/wadebridge-gaming-group:dev
+#     # 2. Set the update strategy to 'latest' to track the digest of the 'dev' tag
+#     argocd-image-updater.argoproj.io/wadebridge-dev.update-strategy: latest
+#     # 3. Use the 'argocd' write-back method to update the app without a Git commit
+#     argocd-image-updater.argoproj.io/write-back-method: argocd
+#     # 4. Explicitly allow the updater to track the mutable 'dev' tag
+#     argocd-image-updater.argoproj.io/wadebridge-dev.allow-tags: regexp:^dev$
+# spec:
+#   project: default
 
-  source:
-    repoURL: https://github.com/jackson147/k8s-testing.git
-    targetRevision: HEAD
-    path: helm/wadebridge-games-dev
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: webapps
+#   source:
+#     repoURL: https://github.com/jackson147/k8s-testing.git
+#     targetRevision: HEAD
+#     path: helm/wadebridge-games-dev
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: webapps
 
-  syncPolicy:
-    syncOptions:
-    - CreateNameSpace=true
+#   syncPolicy:
+#     syncOptions:
+#     - CreateNameSpace=true
 
-    automated:
-      selfHeal: true
-      prune: true
+#     automated:
+#       selfHeal: true
+#       prune: true
