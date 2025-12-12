@@ -1,6 +1,6 @@
 image:
   repository: jackson147/wadebridge-gaming-group
-  tag: 1.4.45
+  tag: 1.4.47
   devTag: dev
   pullPolicy: IfNotPresent
 
