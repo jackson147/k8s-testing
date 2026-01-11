@@ -24,6 +24,17 @@ spec:
         envFrom:
         - secretRef:
             name: wadebridge-games-env
+      initContainers:
+      - name: wait-for-postgres
+        image: busybox:1.28
+        command: ['sh', '-c', "until nc -z {{ .Release.Name }}-postgresql 5432; do echo waiting for postgres; sleep 2; done"]
+      - name: pg-init
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        command: ['sh', '-c', "npx prisma@6 migrate deploy"]
+        envFrom:
+        - secretRef:
+            name: wadebridge-games-env
+
 ---
 kind: Deployment
 apiVersion: apps/v1
