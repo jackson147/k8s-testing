@@ -8,7 +8,7 @@ image:
   # -- Traefik image repository
   repository: traefik
   # -- defaults to appVersion
-  tag: v3.6.6
+  tag: v3.6.7
   # -- Traefik image pull policy
   pullPolicy: IfNotPresent
 
