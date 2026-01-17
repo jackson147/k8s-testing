@@ -9,7 +9,7 @@ spec:
     issuerRef:
         name: letsencrypt-production
         kind: ClusterIssuer
-    commonName: "*.wadebridgegames.uk"
+    commonName: "wadebridgegames.newlinkedlist.uk"
     dnsNames:
-    - "wadebridgegames.uk"
-    - "*.wadebridgegames.uk"
+    - "wadebridgegames.newlinkedlist.uk"
+    - "*.wadebridgegames.newlinkedlist.uk"
