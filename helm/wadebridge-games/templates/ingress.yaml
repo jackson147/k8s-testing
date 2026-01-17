@@ -10,7 +10,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`wadebridgegames.uk`) || Host(`www.wadebridgegames.uk`)
+    - match: Host(`wadebridgegames.newlinkedlist.uk`) || Host(`www.wadebridgegames.newlinkedlist.uk`)
       kind: Rule
       services:
         - name: wadebridge-games
@@ -29,7 +29,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`pg.wadebridgegames.uk`)
+    - match: Host(`pg.wadebridgegames.newlinkedlist.uk`)
       kind: Rule
       services:
         - name: wadebridge-games-pg-admin
