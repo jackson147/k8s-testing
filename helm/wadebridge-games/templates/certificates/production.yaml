@@ -2,14 +2,14 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-    name: wadebridge-games-com-production
+    name: wadebridge-games-uk-production
     namespace: webapps
 spec:
-    secretName: wadebridge-games-com-production-tls
+    secretName: wadebridge-games-uk-production-tls
     issuerRef:
         name: letsencrypt-production
         kind: ClusterIssuer
-    commonName: "*.wadebridgegames.com"
+    commonName: "*.wadebridgegames.uk"
     dnsNames:
-    - "wadebridgegames.com"
-    - "*.wadebridgegames.com"
+    - "wadebridgegames.uk"
+    - "*.wadebridgegames.uk"
