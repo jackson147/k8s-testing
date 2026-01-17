@@ -2,14 +2,14 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-    name: argo-newlinkedlist-com-production
+    name: argo-newlinkedlist-uk-production
     namespace: argocd
 spec:
-    secretName: argocd-newlinkedlist-com-production-tls
+    secretName: argocd-newlinkedlist-uk-production-tls
     issuerRef:
         name: letsencrypt-production
         kind: ClusterIssuer
-    commonName: "*.argocd.newlinkedlist.com"
+    commonName: "*.argocd.newlinkedlist.uk"
     dnsNames:
-    - "argocd.newlinkedlist.com"
-    - "*.argocd.newlinkedlist.com"
+    - "argocd.newlinkedlist.uk"
+    - "*.argocd.newlinkedlist.uk"

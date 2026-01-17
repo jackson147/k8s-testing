@@ -20,6 +20,3 @@ spec:
               selector:
                 dnsZones:
                     - "newlinkedlist.uk"
-                    - "newlinkedlist.com"
-                    - "johnmartinjackson.com"
-                    - "wadebridgegames.com"
