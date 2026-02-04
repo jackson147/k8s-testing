@@ -4,5 +4,5 @@ version: 0.0.2
 description: A Traefik umbrella chart with custom middleware
 dependencies:
 - name: traefik
-  version: "37.4.0"
+  version: "39.0.0"
   repository: https://traefik.github.io/charts
