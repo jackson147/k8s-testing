@@ -32,11 +32,8 @@ traefik:
     websecure:
       port: 8443
       exposedPort: 443
-      # MOVED OUT OF NATIVE:
-      advertisedPort: 443
       http3: 
         enabled: true
-      # TLS stays under http
       http:
         tls:
           enabled: true
