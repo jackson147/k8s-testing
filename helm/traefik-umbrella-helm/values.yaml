@@ -1,9 +1,8 @@
 traefik:
-  globalArguments:
+  # 1. globalArguments is removed. Moved these flags to additionalArguments.
+  additionalArguments:
     - "--global.sendanonymoususage=false"
     - "--global.checknewversion=false"
-
-  additionalArguments:
     - "--providers.kubernetescrd.allowCrossNamespace=true"
     - "--serversTransport.insecureSkipVerify=true"
     - "--log.level=INFO"
@@ -21,17 +20,22 @@ traefik:
 
   ports:
     web:
-      redirections:
-        entryPoint:
-          to: websecure
-          scheme: https
-          permanent: true
+      http:
+        redirections:
+          entryPoint:
+            to: websecure
+            scheme: https
+            permanent: true
+            
     websecure:
-      http3: 
-        enabled: true
-      advertisedPort: 443
-      tls:
-        enabled: true
+      native:
+        advertisedPort: 443
+        http3: 
+          enabled: true
+      http:
+        tls:
+          enabled: true
+
     unifi-inform:
       port: 8080
       exposedPort: 8080
@@ -80,5 +84,4 @@ traefik:
     type: LoadBalancer
     annotations: {}
     labels: {}
-    loadBalancerSourceRanges: []
-    externalIPs: []
+    loadBalancerSource
