@@ -33,6 +33,7 @@ traefik:
       port: 8443
       exposedPort: 443
       http3: 
+        advertisedPort: 443
         enabled: true
       http:
         tls:
