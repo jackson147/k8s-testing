@@ -1,5 +1,4 @@
 traefik:
-  # 1. globalArguments is removed. Moved these flags to additionalArguments.
   additionalArguments:
     - "--global.sendanonymoususage=false"
     - "--global.checknewversion=false"
@@ -20,6 +19,9 @@ traefik:
 
   ports:
     web:
+      # Port and exposedPort stay at root
+      port: 8000
+      exposedPort: 80
       http:
         redirections:
           entryPoint:
@@ -28,10 +30,13 @@ traefik:
             permanent: true
             
     websecure:
-      native:
-        advertisedPort: 443
-        http3: 
-          enabled: true
+      port: 8443
+      exposedPort: 443
+      # MOVED OUT OF NATIVE:
+      advertisedPort: 443
+      http3: 
+        enabled: true
+      # TLS stays under http
       http:
         tls:
           enabled: true
