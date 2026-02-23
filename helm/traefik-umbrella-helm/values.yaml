@@ -1,9 +1,7 @@
 traefik:
-  globalArguments:
+  additionalArguments:
     - "--global.sendanonymoususage=false"
     - "--global.checknewversion=false"
-
-  additionalArguments:
     - "--providers.kubernetescrd.allowCrossNamespace=true"
     - "--serversTransport.insecureSkipVerify=true"
     - "--log.level=INFO"
@@ -21,17 +19,26 @@ traefik:
 
   ports:
     web:
-      redirections:
-        entryPoint:
-          to: websecure
-          scheme: https
-          permanent: true
+      # Port and exposedPort stay at root
+      port: 8000
+      exposedPort: 80
+      http:
+        redirections:
+          entryPoint:
+            to: websecure
+            scheme: https
+            permanent: true
+            
     websecure:
+      port: 8443
+      exposedPort: 443
       http3: 
+        advertisedPort: 443
         enabled: true
-      advertisedPort: 443
-      tls:
-        enabled: true
+      http:
+        tls:
+          enabled: true
+
     unifi-inform:
       port: 8080
       exposedPort: 8080
