@@ -1,4 +1,4 @@
-gitlab-runner:
+gitlab-runner-x86:
   gitlabUrl: https://gitlab.com/
 
   runners:
@@ -19,6 +19,33 @@ gitlab-runner:
 
   nodeSelector:
     kubernetes.io/arch: amd64
+
+  rbac:
+    create: true
+
+gitlab-runner-arm:
+  gitlabUrl: https://gitlab.com/
+
+  runners:
+    secret: gitlab-arm-runner-secret
+    
+    config: |
+      [[runners]]
+        name = "k3s-arm64-runner"
+        executor = "kubernetes"
+        # Fixes the long polling warning
+        request_concurrency = 4
+        [runners.kubernetes]
+          namespace = "gitlab-runner"
+          image = "alpine:latest"
+          [runners.kubernetes.node_selector]
+            "kubernetes.io/arch" = "arm64"
+          
+          cpu_requests = "500m"
+          memory_requests = "512Mi"
+
+  nodeSelector:
+    kubernetes.io/arch: arm64
 
   rbac:
     create: true
