@@ -5,6 +5,7 @@ gitlab-runner:
   ## Configure the pods that will actually run the CI jobs
   runners:
     secret: gitlab-runner-secret
+    secretKey: runner-registration-token
     config: |
       [[runners]]
         name = "k3s-hybrid-runner"
