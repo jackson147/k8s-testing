@@ -3,22 +3,19 @@ gitlab-runner:
 
   runners:
     secret: gitlab-runner-secret
-    # Point to the registration token key
     secretKey: runner-registration-token
     
     config: |
       [[runners]]
         name = "k3s-hybrid-runner"
         executor = "kubernetes"
+        request_concurrency = 4 
         [runners.kubernetes]
           namespace = "gitlab-runner"
           image = "alpine:latest"
           privileged = true
           cpu_requests = "500m"
           memory_requests = "512Mi"
-          # IMPORTANT: We remove the hardcoded node_selector here 
-          # so the runner can schedule on any available architecture.
-          # Or, keep it as a default and override in .gitlab-ci.yml
 
   nodeSelector:
     kubernetes.io/arch: amd64
