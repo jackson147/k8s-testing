@@ -1,11 +1,9 @@
 ## The GitLab Server URL
 gitlabUrl: https://gitlab.com/
 
-## The Registration Token for your project/group
-runnerRegistrationToken: "YOUR_REGISTRATION_TOKEN_HERE"
-
 ## Configure the pods that will actually run the CI jobs
 runners:
+  secret: gitlab-runner-secret
   config: |
     [[runners]]
       name = "k3s-hybrid-runner"
