@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gitlab-runner
+  name: gitlab-runner-arm
   namespace: argocd
 spec:
   project: default
