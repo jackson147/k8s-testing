@@ -1,5 +1,5 @@
 ## The GitLab Server URL
-gitlabUrl: https://gitlab.com/
+gitlabUrl: https://gitlab.com
 
 ## Configure the pods that will actually run the CI jobs
 runners:
@@ -7,7 +7,7 @@ runners:
   config: |
     [[runners]]
       name = "k3s-hybrid-runner"
-      url = "https://gitlab.com/"
+      url = "https://gitlab.com"
       executor = "kubernetes"
       # This tag is for the 'manager' pod; the actual jobs use tags defined below
       [runners.kubernetes]
@@ -23,6 +23,7 @@ runners:
       ## This allows one Helm release to handle both x86 and ARM
       
     [[runners]]
+      url = "https://gitlab.com"
       name = "x86-worker"
       executor = "kubernetes"
       tags = "x86"
@@ -31,6 +32,7 @@ runners:
           "kubernetes.io/arch" = "amd64"
 
     [[runners]]
+      url = "https://gitlab.com"
       name = "arm-worker"
       executor = "kubernetes"
       tags = "arm64"
