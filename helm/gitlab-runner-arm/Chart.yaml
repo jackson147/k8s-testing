@@ -1,5 +1,5 @@
 apiVersion: v2
-name: gitlab-runner
+name: gitlab-runner-arm
 version: 0.0.1
 description: Gitlab runner helm chart
 dependencies:
