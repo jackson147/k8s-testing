@@ -3,10 +3,9 @@ name: gitlab-runner
 version: 0.0.1
 description: Gitlab runner helm chart
 dependencies:
-- name: gitlab-runner-x86
+- name: gitlab-runner
   version: "0.87.0"
   repository: https://charts.gitlab.io
-dependencies:
-- name: gitlab-runner-arm
+- name: gitlab-runner
   version: "0.87.0"
   repository: https://charts.gitlab.io
