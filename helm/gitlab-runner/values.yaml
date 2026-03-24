@@ -7,6 +7,7 @@ runners:
   config: |
     [[runners]]
       name = "k3s-hybrid-runner"
+      url = "https://gitlab.com/"
       executor = "kubernetes"
       # This tag is for the 'manager' pod; the actual jobs use tags defined below
       [runners.kubernetes]
