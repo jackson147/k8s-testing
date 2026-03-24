@@ -11,7 +11,7 @@ gitlab-runner:
         executor = "kubernetes"
         request_concurrency = 4 
         [runners.kubernetes]
-          namespace = "gitlab-runner"
+          namespace = "gitlab"
           image = "alpine:latest"
           privileged = true
           cpu_requests = "500m"

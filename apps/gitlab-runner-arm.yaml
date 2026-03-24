@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/jackson147/k8s-testing.git
     targetRevision: HEAD
-    path: helm/gitlab-runner
+    path: helm/gitlab-runner-arm
   destination:
     server: https://kubernetes.default.svc
     namespace: gitlab
