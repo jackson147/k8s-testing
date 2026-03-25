@@ -16,6 +16,8 @@ gitlab-runner:
           privileged = true
           cpu_requests = "1000m"
           memory_requests = "2Gi"
+          ephemeral_storage_request = "2Gi"
+          ephemeral_storage_limit = "4Gi"
 
   nodeSelector:
     kubernetes.io/arch: amd64
