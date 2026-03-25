@@ -11,7 +11,7 @@ gitlab-runner:
         # Fixes the long polling warning
         request_concurrency = 4
         [runners.kubernetes]
-          image = "docker:24.0.5"
+          image = "alpine:latest"
           privileged = true
           namespace = "gitlab"
           [runners.kubernetes.node_selector]

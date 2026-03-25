@@ -12,7 +12,7 @@ gitlab-runner:
         request_concurrency = 4 
         [runners.kubernetes]
           namespace = "gitlab"
-          image = "docker:24.0.5"
+          image = "alpine:latest"
           privileged = true
           cpu_requests = "500m"
           memory_requests = "512Mi"
