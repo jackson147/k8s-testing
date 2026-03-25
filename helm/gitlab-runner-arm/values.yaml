@@ -16,9 +16,8 @@ gitlab-runner:
           namespace = "gitlab"
           [runners.kubernetes.node_selector]
             "kubernetes.io/arch" = "arm64"
-          
-          cpu_requests = "500m"
-          memory_requests = "512Mi"
+          cpu_requests = "1000m"
+          memory_requests = "2Gi"
 
   nodeSelector:
     kubernetes.io/arch: amd64

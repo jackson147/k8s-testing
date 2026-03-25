@@ -14,8 +14,8 @@ gitlab-runner:
           namespace = "gitlab"
           image = "alpine:latest"
           privileged = true
-          cpu_requests = "500m"
-          memory_requests = "512Mi"
+          cpu_requests = "1000m"
+          memory_requests = "2Gi"
 
   nodeSelector:
     kubernetes.io/arch: amd64
