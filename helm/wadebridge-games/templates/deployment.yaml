@@ -10,6 +10,8 @@ spec:
   replicas: 1
   progressDeadlineSeconds: 600
   revisionHistoryLimit: 2
+  imagePullSecrets:
+    - gitlab-registry-secret
   selector:
     matchLabels:
       app: wadebridge-games
