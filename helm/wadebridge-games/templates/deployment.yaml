@@ -32,13 +32,14 @@ spec:
         command: ['sh', '-c', "until nc -z {{ .Release.Name }}-postgresql 5432; do echo waiting for postgres; sleep 2; done"]
       - name: pg-init
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        command: ['sh', '-c', "npx prisma migrate deploy"]
-        env:
-          - name: DATABASE_URL
-            valueFrom:
-              secretKeyRef:
-                name: wadebridge-games-env
-                key: DATABASE_URL
+        command: 
+          - /bin/sh
+          - -c
+          - |
+            npm install @prisma/config && npx prisma migrate deploy
+        envFrom:
+        - secretRef:
+            name: wadebridge-games-env
 
 ---
 kind: Deployment
