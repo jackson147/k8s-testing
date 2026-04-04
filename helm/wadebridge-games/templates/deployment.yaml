@@ -33,9 +33,12 @@ spec:
       - name: pg-init
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         command: ['sh', '-c', "npx prisma migrate deploy"]
-        envFrom:
-        - secretRef:
-            name: wadebridge-games-env
+        env:
+          - name: DATABASE_URL
+            valueFrom:
+              secretKeyRef:
+                name: wadebridge-games-env
+                key: DATABASE_URL
 
 ---
 kind: Deployment
