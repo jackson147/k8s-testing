@@ -23,7 +23,7 @@ spec:
       containers:
       - name: wadebridge-games
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-      envFrom:
+        envFrom:
         - secretRef:
             name: wadebridge-games-env
       initContainers:
