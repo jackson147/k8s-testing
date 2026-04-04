@@ -19,7 +19,7 @@ spec:
         app: wadebridge-games
     spec:
       imagePullSecrets:
-        - gitlab-registry-secret
+        - name: gitlab-registry-secret
       containers:
       - name: wadebridge-games
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
