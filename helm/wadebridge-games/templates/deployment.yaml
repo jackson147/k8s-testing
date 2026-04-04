@@ -10,8 +10,6 @@ spec:
   replicas: 1
   progressDeadlineSeconds: 600
   revisionHistoryLimit: 2
-  imagePullSecrets:
-    - gitlab-registry-secret
   selector:
     matchLabels:
       app: wadebridge-games
@@ -20,6 +18,8 @@ spec:
       labels:
         app: wadebridge-games
     spec:
+      imagePullSecrets:
+        - gitlab-registry-secret
       containers:
       - name: wadebridge-games
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
