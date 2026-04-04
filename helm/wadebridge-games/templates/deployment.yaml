@@ -23,6 +23,9 @@ spec:
       containers:
       - name: wadebridge-games
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        env:
+        - name: AUTH_URL
+          value: "https://wadebridgegames.com"
         envFrom:
         - secretRef:
             name: wadebridge-games-env
