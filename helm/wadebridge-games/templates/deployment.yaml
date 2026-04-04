@@ -32,7 +32,7 @@ spec:
         command: ['sh', '-c', "until nc -z {{ .Release.Name }}-postgresql 5432; do echo waiting for postgres; sleep 2; done"]
       - name: pg-init
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        command: ['sh', '-c', "npx prisma@6 migrate deploy"]
+        command: ['sh', '-c', "npx prisma migrate deploy"]
         envFrom:
         - secretRef:
             name: wadebridge-games-env
