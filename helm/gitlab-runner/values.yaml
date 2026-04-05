@@ -9,7 +9,9 @@ gitlab-runner:
       [[runners]]
         name = "k3s-hybrid-runner"
         executor = "kubernetes"
-        request_concurrency = 4 
+        request_concurrency = 4
+        allowed_pull_policies = ["always", "if-not-present", "never"]
+        pull_policy = "always"
         [runners.kubernetes]
           namespace = "gitlab"
           image = "alpine:latest"
