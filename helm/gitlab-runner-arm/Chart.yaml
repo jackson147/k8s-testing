@@ -4,5 +4,5 @@ version: 0.0.1
 description: Gitlab runner helm chart
 dependencies:
 - name: gitlab-runner
-  version: "0.87.0"
+  version: "0.87.1"
   repository: https://charts.gitlab.io
